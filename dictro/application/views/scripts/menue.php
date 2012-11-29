@@ -3,7 +3,7 @@
 	<div>
 	<p> Username <br/> <input type="text" name="name" /></p>
 	
-	<p> Password <br/> <input type="text" passwd="passwd"/></p>
+	<p> Password <br/> <input type="text" name"passwd"/></p>
 
 	<p><input type="submit" value = "Login" /></p>
 	</div>
