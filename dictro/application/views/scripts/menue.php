@@ -1,12 +1,14 @@
 <body>
 	
 	<div>
-	<p> Username <br/> <input type="text" name="name" /></p>
+	<p> Username <br/> <input type="text" name = "name" /></p>
 	
-	<p> Password <br/> <input type="text" name"passwd"/></p>
+	<p> Password <br/> <input type="text" name = "passwd"/></p>
 
 	<p><input type="submit" value = "Login" /></p>
 	</div>
+	
+
 	
 	<div>
 	 <ul>
@@ -22,5 +24,6 @@
 		
 	 </ul>
 	</div>
+	
 	
 </body>
