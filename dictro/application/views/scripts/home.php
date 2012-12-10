@@ -1,41 +1,43 @@
 
 <html>
 	<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	
 	<style>
 	
-	
-	
-	* {
-	margin:5;
-	padding:0;
-	
-	}
+		* {
+		margin:5;
+		padding:0;
+		
+		}
 
-	body {
-	text-align:center; /* horizontal centering for IE Win quirks */
-	}
+		body {
+		text-align:center; /* horizontal centering for IE Win quirks */
+		}
 
-	#container {
-	top: 0px;
-	margin:0 auto;
-	position:relative; /* puts container in front of distance */
-	text-align:left;
-	height:1024px;
-	width:1024px;
-	clear:left;
-	background-color:#FFFF30;
-	
-	}
-	
-	#translate {
-    float: right;
-    height: 500px;
-    width: 750px;
-	}
+		#container {
+		top: 0px;
+		margin:0 auto;
+		position:relative; /* puts container in front of distance */
+		text-align:left;
+		height:1024px;
+		width:1024px;
+		clear:left;
+		background-color:#FFFF30;
+		
+		}
+		
+		#translate {
+		float: right;
+		height: 500px;
+		width: 750px;
+		}
 	
 	</style>
 	</head>
 
+	
 	
 	<body style="background-color:#FFFF90";>
 	
