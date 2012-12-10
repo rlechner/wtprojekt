@@ -42,10 +42,14 @@
 			</form> 
 
 						
+<!-- <<<<<< HEAD -->
 			<?php
-				$translate = $search;
-				echo "$translate";
+				//$translate = $search;
+				//echo "$translate";
 			?> 
+=======
+
+<!-- >>>>>>> 050a6c1fa176d86e2e55e5078055f1743cb401dd -->
 
 
 			<?php
