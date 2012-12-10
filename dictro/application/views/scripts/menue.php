@@ -28,7 +28,9 @@
 	
 		<li><a href="contact.php">Contact</a></li>
 	
-		<li><a href="impressum.php">Impressum</a></li>
+		<li><a href="impressum.php">Impressum<br/><br/><br/></a></li>
+		
+		<li><a href="adminfunctions.php">Adminfunctions</a></li>
 		
 	 </ul>
 	</div>
