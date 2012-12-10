@@ -2,13 +2,13 @@
 <html>
 	<head>
 	<style>
-	
+		
 	</style>
 	</head>
 	<body>
 	
 	
-		<div class="imgleft" style="float: left; width: 600px; height: 150;"> 
+		<div class="imgleft" style="float: left; width: 450px; height: 150;"> 
 			<img src="/../../../images/pic1.jpg" alt="eine grafik">
 		</div>
 		
