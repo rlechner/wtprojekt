@@ -5,7 +5,17 @@ body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
     color:#333
+			top: 0px;
+		margin:0 auto;
+		position:relative; /* puts container in front of distance */
+		text-align:left;
+		height:700px;
+		width:1000px;
+		clear:left;
+		background-color:#FFFFFF;
 }
+
+
 
 p {
     padding: 10px;
@@ -17,57 +27,60 @@ p {
 }
 
 #headerwrap {
-    width: 1000px;
-    float: left;
     margin: 0 auto;
+    width: 1000px;
 }
 
 #header {
-    height: 75px;
-    background: #FF6633;
+    height: 100px;
+    background: #ff4500;
     border-radius: 10px;
-    border: 1px solid #eb521f;
+    border: 1px solid #ff4500;
     margin: 5px;
 }
 
 #contentwrap {
-    width: 850px;
-    float: left;
+    float: right;
     margin: 0 auto;
+    width: 564px;
 }
 
 #content {
     background: #FFFFFF;
     border-radius: 10px;
-    border: 1px solid #ebebeb;
+    border: 1px solid #ff4500;
     margin: 5px;
+	height: 500px;
+	width: 807
 }
 
 #leftcolumnwrap {
-    width: 150px;
     float: left;
     margin: 0 auto;
+    width: 180px;
+	
 }
 
 #leftcolumn {
-    background: #FF6633;
+    background: #ff4500;
     border-radius: 10px;
-    border: 1px solid #1fb8eb;
+    border: 1px solid #ff4500;
     margin: 5px;
+	height: 500px
 }
 
 #footerwrap {
     width: 1000px;
-    float: left;
+    float: center;
     margin: 0 auto;
 	clear: both;
 }
 
 #footer {
     height: 40px;
-    background: #33FF66;
+    background: #ff4500;
     border-radius: 10px;
-    border: 1px solid #1feb52;
+    border: 1px solid #ff4500;
     margin: 5px;
 }
 </style>
@@ -87,13 +100,13 @@ p {
 		    </div>
 	    </div>
 	    
-	    <div id="leftcolumnwrap">
+	    <div id="leftcolumnwrap"  class="menue" style="float:left">
 		    <div id="leftcolumn">
 		        <?php echo $this->action('index', 'menue'); ?>
 		    </div>
 	    </div>
 		
-		<div id="contentwrap">
+		<div id="contentwrap" class="content" style="float:right">
 		    <div id="content">
 		         <?php echo $this->layout()->content; ?>
 			</div>
@@ -103,6 +116,7 @@ p {
 	            <?php echo $this->action('index', 'footer'); ?>
 	        </div>
         </div>
+		
  </div>
  
 </body>
