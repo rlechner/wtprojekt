@@ -31,16 +31,22 @@
 	<body style="background-color:#FFFF90";>
 	
 	<div id="container">
+	
+	
 		<div id="header"><?php include("header.php");?></div>
-		<br><br><br><br><br>
-		<div id="menue" style="float:left"><?php include("menue.php");?>
-		</div>
+		
+		<br><br><br><br><br><br><br><br>
+		
+		<div id="menue" style="float:left"><?php include("menue.php");?></div>
 		
 	
 	<br><br>
 	
-	<div class="table">
+	<div class="table" style="float:right; height:500px; width: 750px">
 		
+			<center><h1>Highscore</h1></center>
+			<br>
+			<center>
 			<table border=1>
             <tr>
                  <th width="200">User</th>
@@ -52,7 +58,8 @@
                 <td width="200"><center>2000</center></td>
                
             </tr>
-         </table>
+			</table>
+			</center>
 		
 	</div>
 	<br><br>	

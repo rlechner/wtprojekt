@@ -28,12 +28,11 @@
 	
 		<li><a href="contact.php">Contact</a></li>
 	
-<!-- <<<<<<< HEAD -->
+		<li><a href="impressum.php">Impressum<br/><br/><br/></a></li>
 		
-		<li><a href="imprint.php">Impressum<br/><br/><br/></a></li>
+		<li><a href="userfunction.php">Userfunctions<br/></a></li>
 		
 		<li><a href="adminfunctions.php">Adminfunctions</a></li>
-<!-- >>>>>>> 050a6c1fa176d86e2e55e5078055f1743cb401dd -->
 		
 	 </ul>
 	</div>
