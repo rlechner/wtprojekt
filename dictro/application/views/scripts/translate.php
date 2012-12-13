@@ -62,9 +62,9 @@
 			$sql = "SELECT * FROM tabelle1";
 			$res = mysql_query($sql) or die(mysql_error());
 			echo "<table>\n";
-			while($obj = mysql_fetch_object($res)){
+			while(($obj = mysql_fetch_object($res)) != NULL){
 			echo "<tr><td>$obj->A</td>";
-				if ($obj = mysql_fetch_object($res)){
+				if (($obj = mysql_fetch_object($res)) != NULL){
 					  echo "<td>$obj->B</td></tr>\n";
 				}
 				else{
@@ -77,9 +77,5 @@
 		
 		</div>
 		
-
-
-		<br>
-		<br>
 	</body>
 </html>

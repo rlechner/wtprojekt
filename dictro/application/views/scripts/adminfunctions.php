@@ -36,7 +36,7 @@
 	</head>
 
 	
-	<body style="background-color:#FFFF90";>
+	<body style="background-color:#FFFF90">
 	
 	<div id="container">
 		<div id="header"><?php include("header.php");?></div>
@@ -83,7 +83,7 @@
 	<div class="searchbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
 		<input type="submit" value="Insert">
 	</div>
-	
+</div>	
 	
 	</body>
 </html>

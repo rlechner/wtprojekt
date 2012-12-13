@@ -1,0 +1,109 @@
+<style>
+	@import url("reset.css");
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#333
+}
+
+p {
+    padding: 10px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#headerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#header {
+    height: 75px;
+    background: #FF6633;
+    border-radius: 10px;
+    border: 1px solid #eb521f;
+    margin: 5px;
+}
+
+#contentwrap {
+    width: 850px;
+    float: left;
+    margin: 0 auto;
+}
+
+#content {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+}
+
+#leftcolumnwrap {
+    width: 150px;
+    float: left;
+    margin: 0 auto;
+}
+
+#leftcolumn {
+    background: #FF6633;
+    border-radius: 10px;
+    border: 1px solid #1fb8eb;
+    margin: 5px;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+	clear: both;
+}
+
+#footer {
+    height: 40px;
+    background: #33FF66;
+    border-radius: 10px;
+    border: 1px solid #1feb52;
+    margin: 5px;
+}
+</style>
+
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Zend Framework Quickstart Application</title>
+  <?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+</head>
+<body>
+ 
+ <div id="wrapper">
+        <div id="headerwrap">
+		    <div id="header">
+		        <?php echo $this->action('index', 'header')?>
+		    </div>
+	    </div>
+	    
+	    <div id="leftcolumnwrap">
+		    <div id="leftcolumn">
+		        <?php echo $this->action('index', 'menue'); ?>
+		    </div>
+	    </div>
+		
+		<div id="contentwrap">
+		    <div id="content">
+		         <?php echo $this->layout()->content; ?>
+			</div>
+        </div>
+        <div id="footerwrap">
+	        <div id="footer">
+	            <?php echo $this->action('index', 'footer'); ?>
+	        </div>
+        </div>
+ </div>
+ 
+</body>
+</html>
