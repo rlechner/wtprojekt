@@ -6,6 +6,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	protected function _bootstrap($resource = null)
 	{
 		require_once "DBSettings.php";
+		require_once "Zend/Registry.php";
 	
 		parent::_bootstrap($resource);
 		$mysqli = new mysqli(DBSettings::HOST, DBSettings::USER, DBSettings::PASSWD, DBSettings::SCHEMA);
@@ -21,7 +22,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 			if ( $mysqli )
 			{
 				echo 'Verbindung erfolgreich: ';
-				echo $mysqli;
+				// echo $mysqli;
 			}
 			else
 			{
