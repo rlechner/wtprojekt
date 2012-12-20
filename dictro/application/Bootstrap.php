@@ -5,8 +5,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
 	protected function _bootstrap($resource = null)
 	{
-		include "Loader.php";
-		include "DBSettings.php";
+		require_once "DBSettings.php";
 	
 		parent::_bootstrap($resource);
 		$mysqli = new mysqli(DBSettings::HOST, DBSettings::USER, DBSettings::PASSWD, DBSettings::SCHEMA);
