@@ -2,7 +2,7 @@
 class DBSettings {
     const HOST   = 'localhost';
     const SCHEMA = 'wbuch';
-    const USER   = 'diablo';
-    const PASSWD = 'diablo';
+    const USER   = 'dictro';
+    const PASSWD = 'Lb6hc5stNVWdq8J4';
 
 }
