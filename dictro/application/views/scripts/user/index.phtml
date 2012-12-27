@@ -1,17 +1,32 @@
-
-<div class="content">
-
-<div class="show_highscore" style="float: left; width: 450px; height: 50;">
-				<p><span style="font-variant:normal">Highscore: $user_highscore</span><br>
-		</div>
-		<div class="resetbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
-				<input type="submit" value="Highscore reset">
-				</div>
-			
-		<br><br>
-		
-		<div class="delt_user" style="float: left; width: 450px; height: 50;">
-				<input type="submit" value="Delete Account?">
-				</div>
 	
-</div>
+	
+	<style>
+		P.blocktext {
+		    margin-left: auto;
+		    margin-right: auto;
+		    width: 6em
+		}
+	</style>
+	
+	<?php
+	$absatz = "<br><br><br><br><br><br><br>";
+	?> 
+
+	<div class="content" style="height:500px; width: 767px; padding: 20px">
+		
+		<?php echo $absatz?>
+		<center>
+			<div class="highscore" style="margin: auto auto">
+					Highscore: $user_highscore
+			<br><br>
+					<input type="submit" value="Reset Highscore" style="width: 120px;">
+			</div>
+				
+			<?php echo $absatz?>
+			
+			<div class="delt_user" style="">
+				<input type="submit" value="Delete Account" style="width: 120px;">
+			</div>
+		</center>
+		
+	</div>

@@ -1,9 +1,36 @@
 
 
-<div class="content">
-  
-	<form method="get" action="translate.php">
-				<input type="text" name="search"> 
-				<input type="submit" value="translate" onClick="window.location.href=/'Translate/translate'">
-			</form> 
-</div>
+	<div class="content">
+	
+		<div class="translate" style="float: left; width: 767px; height: 25; padding: 20px">
+			<center>
+				<form method="get" action="/Index/translate">
+					<input type="text" name="search"> 
+					<input type="submit" value="translate">
+				</form> 
+			</center>
+		</div>
+		
+	</div>
+	
+	<?php 
+			
+	
+		
+	
+			/*
+			echo "<table>\n";
+			while(($obj = mysql_fetch_object($res)) != NULL){
+			echo "<tr><td>$obj->A</td>";
+			if (($obj = mysql_fetch_object($res)) != NULL){
+			echo "<td>$obj->B</td></tr>\n";
+			}
+			else{
+			echo "<td>&nbsp</td></tr>\n";
+			}
+			}
+			"</table>\n";
+			*/
+		
+		
+	?>
