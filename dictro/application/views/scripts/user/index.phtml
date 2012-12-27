@@ -12,6 +12,7 @@
 	$absatz = "<br><br><br><br><br><br><br>";
 	?> 
 
+<<<<<<< HEAD
 	<div class="content" style="height:500px; width: 767px; padding: 20px">
 		
 		<?php echo $absatz?>
@@ -23,10 +24,32 @@
 			</div>
 				
 			<?php echo $absatz?>
+=======
+<div class="content">
+
+<div class="show_highscore" style="float: left; width: 450px; height: 50;">
+				<p><span style="font-variant:normal">Highscore: $user_highscore</span><br>
+		</div>
+		<div class="resetbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
+			<form method="get" action="/Highscore/highscorereset">
+				<input type="submit" value="Reset Highscore">
+			</form> 
+				</div>
+>>>>>>> d708f3a6e3d4eec26671e410756a34006f4d4c04
 			
 			<div class="delt_user" style="">
 				<input type="submit" value="Delete Account" style="width: 120px;">
 			</div>
 		</center>
 		
+<<<<<<< HEAD
 	</div>
+=======
+		<div class="delt_user" style="float: left; width: 450px; height: 50;">
+			<form method="get" action="/User/deleteAccount">
+				<input type="submit" value="Delete Account?">
+			</form> 
+				</div>
+	
+</div>
+>>>>>>> d708f3a6e3d4eec26671e410756a34006f4d4c04
