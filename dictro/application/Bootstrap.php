@@ -9,32 +9,38 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		require_once "Zend/Registry.php";
 	
 		parent::_bootstrap($resource);
+		
 		$mysqli = new mysqli(DBSettings::HOST, DBSettings::USER, DBSettings::PASSWD, DBSettings::SCHEMA);
 			
-		if (mysqli_connect_errno()) {
+		if (!$mysqli) {
 			printf("Connect failed: %s\n", mysqli_connect_error());
-			exit();}
-				
-			$mysqli->set_charset('utf8');
-			Zend_Registry::set('dbc', $mysqli);
-	
-	
-			if ( $mysqli )
-			{
-				echo 'Verbindung erfolgreich: ';
-<<<<<<< HEAD
-				
-=======
-				// echo $mysqli;
->>>>>>> 27af3060745b59f83cb2b65561c8944fae7b42d1
-			}
-			else
-			{
-				// hier sollte dann später dem Programmierer eine
-				// E-Mail mit dem Problem zukommen gelassen werden
-				die('keine Verbindung möglich: ' . mysql_error());
-			}
+			exit();
 		}
+
+		//DB SELECT
+		/*
+		$db_selected = mysql_select_db(DBSettings::SCHEMA);
+		if (!$db_selected) {
+			die ("Kann die Datenbank nicht benutzen : " .mysql_error());
+		}
+		*/
+		
+		$mysqli->set_charset('utf8');
+		Zend_Registry::set('dbc', $mysqli);
+	
+	
+		if ( $mysqli )
+		{
+			echo 'Verbindung erfolgreich: ';
+
+		}
+		else
+		{
+			// hier sollte dann später dem Programmierer eine
+			// E-Mail mit dem Problem zukommen gelassen werden
+			die('keine Verbindung möglich: ' . mysql_error());
+		}
+	}
 		
 	protected function _initDoctype()
 	{
@@ -44,4 +50,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	}
 
 }
+
+
+
+
 
