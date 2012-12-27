@@ -22,11 +22,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 			if ( $mysqli )
 			{
 				echo 'Verbindung erfolgreich: ';
-<<<<<<< HEAD
-				
-=======
-				// echo $mysqli;
->>>>>>> 27af3060745b59f83cb2b65561c8944fae7b42d1
+
 			}
 			else
 			{

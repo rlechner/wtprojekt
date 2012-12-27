@@ -1,13 +1,19 @@
 
 <div class="content">
 	<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-<form method="get" action="search_admin.php">
+<form method="get" action="/Admin/searchvocable">
 <input type="text" name="search_admin">
-<input type="submit" value="search">
+<input type="submit" value="Search">
 </form> </div>
 <div class="searchbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
-<input type="submit" value="Delete">
-<input type="submit" value="Update">
+	
+	<form method="get" action="/Admin/deletevocable">
+		<input type="submit" value="Delete">
+	</form>
+	
+	<form method="get" action="/Admin/updatevocable">
+		<input type="submit" value="Update">
+	</form> 
 </div>
 
 <br><br>
@@ -39,6 +45,7 @@
 
 <br>
 <div class="searchbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
-<input type="submit" value="Insert">
-</div>
+	<form method="get" action="/Admin/insertvocable">
+		<input type="submit" value="Insert">
+	</form> 
 </div>

@@ -5,13 +5,17 @@
 				<p><span style="font-variant:normal">Highscore: $user_highscore</span><br>
 		</div>
 		<div class="resetbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
-				<input type="submit" value="Highscore reset">
+			<form method="get" action="/Highscore/highscorereset">
+				<input type="submit" value="Reset Highscore">
+			</form> 
 				</div>
 			
 		<br><br>
 		
 		<div class="delt_user" style="float: left; width: 450px; height: 50;">
+			<form method="get" action="/User/deleteAccount">
 				<input type="submit" value="Delete Account?">
+			</form> 
 				</div>
 	
 </div>
