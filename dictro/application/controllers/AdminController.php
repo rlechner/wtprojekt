@@ -12,7 +12,18 @@ class AdminController extends Zend_Controller_Action
     {
         // action body
     }
+	
+	public function searchvocableAction(){
+	
+	}
 
+	public function deletevocableAction(){
+	}
+	
+	public function updatevocableAction(){
+	}
 
+	public function insertvocableAction(){
+	}
 }
 

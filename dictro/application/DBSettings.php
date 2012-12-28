@@ -1,5 +1,6 @@
 <?php
 class DBSettings {
+	
     const HOST   = 'localhost';
     const SCHEMA = 'dictro';
     const USER   = 'dictro';

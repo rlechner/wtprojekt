@@ -12,7 +12,14 @@ class ContactController extends Zend_Controller_Action
     {
         // action body
     }
+	
+	public function sendFormAction(){
+	
+	}
 
+	public function resetTextfield(){
+	
+	}
 
 }
 

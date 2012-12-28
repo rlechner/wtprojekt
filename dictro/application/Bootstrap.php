@@ -29,17 +29,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		Zend_Registry::set('dbc', $mysqli);
 	
 	
-		if ( $mysqli )
-		{
-			echo 'Verbindung erfolgreich: ';
+			if ( $mysqli )
+			{
+				echo 'Verbindung erfolgreich: ';
 
-		}
-		else
-		{
-			// hier sollte dann später dem Programmierer eine
-			// E-Mail mit dem Problem zukommen gelassen werden
-			die('keine Verbindung möglich: ' . mysql_error());
-		}
+			}
+			else
+			{
+				// hier sollte dann später dem Programmierer eine
+				// E-Mail mit dem Problem zukommen gelassen werden
+				die('keine Verbindung möglich: ' . mysql_error());
+			}
+
 	}
 		
 	protected function _initDoctype()
