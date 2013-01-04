@@ -1,7 +1,7 @@
 <?php
 $host = "localhost"; // Adresse des Datenbankservers, meistens localhost
-$user = "diablo"; // Ihr MySQL Benutzername
-$pass = "diablo"; // Ihr MySQL Passwort
-$db = "wbuch"; // Name der Datenbank
+$user = "dictro"; // Ihr MySQL Benutzername
+$pass = "Lb6hc5stNVWdq8J4"; // Ihr MySQL Passwort
+$db = "dictro"; // Name der Datenbank
 
 ?> 

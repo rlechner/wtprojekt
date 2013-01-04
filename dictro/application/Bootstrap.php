@@ -31,7 +31,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
 			if ( $mysqli )
 			{
-				echo 'Verbindung erfolgreich: ';
+// 				echo 'Verbindung erfolgreich: ';
 
 			}
 			else
