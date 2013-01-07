@@ -12,8 +12,11 @@ class TranslationController extends Zend_Controller_Action
     {
         $request = $this->getRequest();
 		$form = new Application_Form_Translate();
+		
+		$values = $form->getValues();
+		print_r($values);
 		if ($this->getRequest()->isPost()) {
-			if ($form->isValid($request->getPost())) {
+					if ($form->isValid($request->getPost())) {
 				$db = Zend_Registry::get('dbc');
 				if (! is_null($db)) {
 					$values = $form->getValues();
@@ -25,6 +28,7 @@ class TranslationController extends Zend_Controller_Action
 			}
 		}
 		$this->view->form = $form;
+		
     }
 
 
