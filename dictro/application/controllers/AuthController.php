@@ -5,20 +5,20 @@ class AuthController extends Zend_Controller_Action
  
     public function loginAction()
     {
-        $db = $this->_getParam('db');
+        $db = Zend_Registry::get('dbc');
  
-        $loginForm = new Default_Form_Auth_Login($_POST);
+        $loginForm = new Application_Form_Login($_POST);
  
         if ($loginForm->isValid()) {
  
             $adapter = new Zend_Auth_Adapter_DbTable(
                 $db,
                 'users',
-                'username',
+                'name',
                 'password'
                 );
  
-            $adapter->setIdentity($loginForm->getValue('username'));
+            $adapter->setIdentity($loginForm->getValue('name'));
             $adapter->setCredential($loginForm->getValue('password'));
  
             $result = $auth->authenticate($adapter);
@@ -49,7 +49,7 @@ class AuthController extends Zend_Controller_Action
 	
 }
 
-?>
+
 
 
 

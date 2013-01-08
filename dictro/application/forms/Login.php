@@ -1,7 +1,7 @@
 <?php
 
 
-class Default_Form_Auth_Login extends Zend_Form
+class Application_Form_Login extends Zend_Form
 {
     public function init()
     {
