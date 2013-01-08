@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="21" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
 <window height="728" width="1024" x="150" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -31,12 +31,17 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="application.ini" partName="application.ini" title="application.ini" tooltip="C:\Webtechnologie\uebungen\uebung6\zfquickstart\application\configs\application.ini" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.ui.DefaultTextEditor" name="application.ini" partName="application.ini" title="application.ini" tooltip="C:\Webtechnologie\uebungen\uebung6\zfquickstart\application\configs\application.ini" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Webtechnologie/uebungen/uebung6/zfquickstart/application/configs/application.ini"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="php.ini" partName="php.ini" title="php.ini" tooltip="C:\Webtechnologie\xampp\php\php.ini" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
@@ -199,8 +204,12 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Webtechnologie/uebungen/uebung6/zfquickstart/application/configs/application.ini"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
 </editors>
-<item active="true" historyLabel="application.ini" index="0">
+<item historyLabel="application.ini" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="php.ini" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -217,6 +226,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="php.ini" tooltip="C:\Webtechnologie\xampp\php\php.ini">
+<persistable uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="application.ini" tooltip="C:\Webtechnologie\uebungen\uebung6\zfquickstart\application\configs\application.ini">
 <persistable uri="file:/C:/Webtechnologie/uebungen/uebung6/zfquickstart/application/configs/application.ini"/>
 </file>
