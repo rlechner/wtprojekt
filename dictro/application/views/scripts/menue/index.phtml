@@ -1,32 +1,232 @@
+	
+	
+	<style type="text/css">
+	a:link { 
+	font-family:Arial,Verdana,Helvetica;
+	font-size:10pt;
+	font-weight:500;
+	color:#FFFFFF;
+	} 
+	
+	a:visited { 
+	font-family:Arial,Verdana,Helvetica;
+	font-size:10pt;
+	font-weight:500;
+	color:#FFFFFF;
+	} 
+	
+	a:active { 
+	font-family:Arial,Verdana,Helvetica;
+	font-size:10pt;
+	font-weight:500;
+	color:#FFFFFF;
+	} 
+	
+	a:hover { 
+	font-family:Arial,Verdana,Helvetica;
+	font-size:10pt;
+	font-weight:500;
+	color:#FFFFFF;
+	} 
+	
+	
+	
+	
+	</style> 
+	
+	
+	<style>
 
-<body>
+/* Some stylesheet reset */
+ul#cssmenu > ul, #cssmenu > ul ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	line-height: 1;
+}
+
+/* The container */
+#cssmenu > ul, #cssmenu > ul ul {
+	display: block;
+	position: relative;
+	width: 150px;
+}
+
+	/* The list elements which contain the links */
+	#cssmenu > ul li {
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		width: 150px;	
+	}
+
+		/* General link styling */
+		#cssmenu > ul li a {
+			/* Layout */
+			display: block;
+			position: relative;
+			margin: 0;
+			border-top: 1px dotted #3a3a3a;
+			border-bottom: 1px dotted #1b1b1b;
+			padding: 11px 20px;
+			width: 110px;
+
+			/* Typography */
+			font-family: 'Yanone Kaffeesatz', Helvetica, Arial, sans-serif;
+			color: #d8d8d8;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-shadow: 0 1px 1px #000;
+			font-size: 13px;
+			font-weight: 300;
+
+			/* Background & effects */
+			background: #282828;
+		}
+
+		/* Rounded corners for the first link of the menu/submenus */
+		#cssmenu > ul li:first-child>a {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-top: 0;
+		}
+
+		/* Rounded corners for the last link of the menu/submenus */
+		#cssmenu > ul li:last-child>a {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			border-bottom: 0;
+		}
+
+
+		/* The hover state of the menu/submenu links */
+		#cssmenu > ul li>a:hover, #cssmenu > ul li:hover>a {
+			color: #fff;
+			text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+			background: #d4b800;
+			background: -webkit-linear-gradient(bottom, #d4b800, #f6d600);
+			background: -ms-linear-gradient(bottom, #d4b800, #f6d600); 
+			background: -moz-linear-gradient(bottom, #d4b800, #f6d600);
+			background: -o-linear-gradient(bottom, #d4b800, #f6d600);
+			border-color: transparent;
+		}
+
+		/* The arrow indicating a submenu */
+		#cssmenu > ul .has-sub>a::after {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #d8d8d8; 
+		}
+
+		/* The same arrow, but with a darker color, to create the shadow effect */
+		#cssmenu > ul .has-sub>a::before {
+			content: '';
+			position: absolute;
+			top: 17px;
+			right: 10px;
+			width: 0px;
+			height: 0px;
+
+			/* Creating the arrow using borders */
+			border: 4px solid transparent;
+			border-left: 4px solid #000;
+		}
+
+		/* Changing the color of the arrow on hover */
+		#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {
+			border-left: 4px solid #fff;
+		}
+
+		#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {
+			border-left: 4px solid rgba(0, 0, 0, .3);
+		}
+
+	
+		/* THE SUBMENUS */
+		#cssmenu > ul ul {
+			position: absolute;
+			left: 150px;
+			top: -9999px;
+			padding-left: 5px;
+			opacity: 0;
+			/* The fade effect, created using an opacity transition */
+			-webkit-transition: opacity .3s ease-in;
+			-moz-transition: opacity .3s ease-in;
+			-o-transition: opacity .3s ease-in;
+			-ms-transition: opacity .3s ease-in;
+		}
+
+		/* Showing the submenu when the user is hovering the parent link */
+		#cssmenu > ul li:hover>ul {
+			top: 0px;
+			opacity: 1;
+		}
+	
+	</style>
+	
+	
+	
+<div class="menue">
 	
 	
 		<div style="margin-left: 0"> 
 			<p>
-			Username <input id="username" type="text" name = "name">
+			<font color="#FFFFFF">Username</font> <input id="username" type="text" name = "name">
 			<br><br>
-			Password <input id="password" type="text" name = "passwd">
+			<font color="#FFFFFF">Password</font> <input id="password" type="text" name = "passwd">
 			<br><br>
 			<input style="margin-left: 80px; width: 70px" type="submit" value = "Login" method="POST" action="/Login/login">
 			</p>
 			
 		</div>
 		
-		<br>
 		
-		 <ul> 								
-			<li><a href="/index" title="Home">Home</a></li>
-			<li><a href="/translation" title="Translation">Translation</a></li>
-			<li><a href="/auth" title="Auth">Login</a></li>
-			<li><a href="/game" title="Game">Game</a></li>
-			<li><a href="/highscore" title="Highscore">Highscore</a></li>
-			<li><a href="/contact" title="Contact">Contact</a></li>
-			<li><a href="/imprint" title="Imprint">Imprint</a></li>
+		
+		<a href="/translation" style="padding-left:40px"; title="Translation">Translation</a>
+		
+<!--  
+
+
+		<div class="links">								
+			<a href="/index" style="padding-left:40px"; title="Home">Home</a>
 			<br>
-			<li><a href="/admin" title="Admin">Adminfunctions</a></li>
-			<li><a href="/user" title="User">Userfunctions</a></li>
-		 </ul>
+			<a href="/translation" style="padding-left:40px"; title="Translation">Translation</a>
+			<br>
+			<a href="/game" style="padding-left:40px"; title="Game">Game</a>
+			<br>
+			<a href="/highscore" style="padding-left:40px"; title="Highscore">Highscore</a>
+			<br>
+			<a href="/contact" style="padding-left:40px"; title="Contact">Contact</a>
+			<br>
+			<a href="/imprint" style="padding-left:40px"; title="Imprint">Imprint</a>
+			<br>
+			<br>
+			<a href="/admin" style="padding-left:40px"; title="Admin">Adminfunctions</a>
+			<br>
+			<a href="/user" style="padding-left:40px"; title="User">Userfunctions</a>
+		</div>  
+-->
+		
+		<div id='cssmenu' style="padding-left:16px">
+		<ul>
+		
+		   <li><a href="/index"><span>Home</span></a></li>
+		   <li><a href="/game"><span>Game</span></a></li>
+		   <li><a href="/highscore"><span>Highscore</span></a></li>
+		   <li><a href="/contact"><span>Contact</span></a></li>
+		   <li><a href="/imprint"><span>Imprint</span></a></li>
+		   <li><a href="/admin"><span>Admin</span></a></li>
+		   <li><a href="/user"><span>User</span></a></li>
+		</ul>
+		</div>
 	
-	
-</body>
+</div>
