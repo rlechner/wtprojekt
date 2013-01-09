@@ -15,4 +15,22 @@
 		}
 		
 	?>
+	<table border="0">
+	<tr>
+	<th>Username</th>
+	<th>Lastname</th>
+	<th>Firstname</th>
+	</tr>
+	<?php
+		foreach ($this->translation as $vocable) {
+		print <<<EOT
+		<tr>
+		<td>{$this->escape($vocable['german'])}</td>
+		<td>{$this->escape($vocable['english'])}</td>
+		</tr>
+		
+EOT;
+	}
+?>
+</table>
 </div>
