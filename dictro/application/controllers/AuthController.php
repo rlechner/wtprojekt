@@ -7,7 +7,7 @@ class AuthController extends Zend_Controller_Action
     {
         $db = Zend_Registry::get('dbc');
 
-        $loginForm = new Application_Form_Login($_POST);
+        $loginForm = new Application_Form_Login();
  
         if ($loginForm->isValid()) {
  
