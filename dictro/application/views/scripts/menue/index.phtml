@@ -167,7 +167,7 @@ ul#cssmenu > ul, #cssmenu > ul ul {
 
 		/* Showing the submenu when the user is hovering the parent link */
 		#cssmenu > ul li:hover>ul {
-			top: 0px;
+			top: 0px;-
 			opacity: 1;
 		}
 	
@@ -187,8 +187,8 @@ ul#cssmenu > ul, #cssmenu > ul ul {
 			// <br><br>
 			// <input style="margin-left: 80px; width: 70px" type="submit" value = "Login" method="POST" action="/Login/login">
 			// </p>
-			//$this->loginForm->setAction($this->url());
-			//echo $this->loginForm;
+			$this->loginForm->setAction($this->url());
+			echo $this->loginForm;
 		?>
 		</div>
 		

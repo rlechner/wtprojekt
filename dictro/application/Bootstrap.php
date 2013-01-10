@@ -19,7 +19,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		
 		//-- Set up Autoload
 
-		Zend_Loader_Autoloader::registerAutoload();
+		//Zend_Loader_Autoloader::registerAutoload();
 
 		   
     	Zend_Loader_Autoloader::getInstance();
