@@ -1,37 +1,148 @@
-
-
+	<style>
 	
+	#inhalt {
+		background: #4682b4; 
+		margin: -1px; 
+		border-radius: 10px; 
+		border: 1px solid #4682b4; 
+		padding: 20px
+	}
 	
-	<div class="content"> 
+	#footerwrap {
+	    width: 820px;
+	    margin: 0 auto;
+		clear: both;
+		float:right;
+		visibility: hidden;
+	}
 	
-		<div class="flagg"  style="padding: 20px">
-			<div class="gb_ger" style="float:left; text-align: right; width: 350px;"">
-				<img src="/images/gb_ger.bmp">
-			</div>
-			<div class="ger_gb" style="float:right; text-align: left; width: 350px;">
-			<img src="/images/ger_gb.bmp">
-			</div>
-		</div>
-
-		<div class="translate" style="float: left; width: 767px; height: 25; padding: 20px">
- 				<center>
- 				<form method="get" action="/Index/translate"> 
- 					<input type="text" name="search">  
- 					<input type="submit" value="translate"> 
- 				</form> 
- 				</center> 
- 		</div> 
-	</div> 
-
+	#footer {
+	    height: 40px;
+	    background: #191970;
+	    border-radius: 10px;
+	    border: 1px solid #191970;
+	    margin: 5px;
+		visibility: hidden;
+	}
 	
-<div id="view-content">	
-	<br><br>
-	Hallo. Nein ich bin nicht die Home-Seite. Ich putze hier nur.
-</div>			
+	#footerwrap2 {
+	    width: 820px;
+	    margin: 5 auto;
+		clear: both;
+		float:right;
+	}
 	
+	#footer2 {
+	    height: 40px;
+	    background: #191970;
+	    border-radius: 10px;
+	    border: 1px solid #191970;
+	    margin: 5px;
+	}
 		
+	#footerwrap_dynamisch {
+	    width: 820px;
+	    margin-left: -12px;
+		clear: both;
+		padding: 5px;
+	}
 	
-<!-- 			/* -->
+	#footer_dynamisch {
+	    height: 40px;
+	    background: #191970;
+	    border-radius: 10px;
+	    border: 1px solid #191970;
+	    margin: 5px;
+	}
+
+	#clear {    
+		clear: both;
+	}    
+	
+	</style>
+	
+
+	
+	<div class="content" style="height: 500px"> 
+			
+
+
+		 <div class="inhalt">	
+		 	
+		 		<div id="inhalt" style="padding: 20px; min-height:460px;">
+				<center>
+				
+				<div class="flagg"  >
+					<div class="gb_ger" style="float:left; text-align: right; width: 350px;">
+						<img src="/images/gb_ger.bmp">
+					</div>
+					<div class="ger_gb" style="float:right; text-align: left; width: 350px;">
+						<img src="/images/ger_gb.bmp">
+					</div>
+				</div>
+	
+			<div class="translate" style="float: left; width: 767px; height: 25; padding: 20px">
+	 				<center>
+	 				<form method="get" action="/Index/translate"> 
+	 					<input type="text" name="search">  
+	 					<input type="submit" value="translate"> 
+	 				</form> 
+	 			</center> 
+	 		</div> 
+				
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT
+				INHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALTINHALT	
+
+
+				
+				</p>
+				</center>
+				
+				</div>
+				
+	 		</div>
+	 		
+	 		
+		 	<div id="footerwrap2" >
+		        <div id="footer2" style="float:right; width:800px">
+		            <?php echo $this->action('index', 'footer'); ?>
+		        </div>
+	        </div>
+
+
+			
+	</div> 
+	
+	
+	
+
+	
+
 <!-- 			echo "<table>\n"; -->
 <!-- 			while(($obj = mysql_fetch_object($res)) != NULL){ -->
 <!-- 			echo "<tr><td>$obj->A</td>"; -->
@@ -43,4 +154,8 @@
 <!-- 			} -->
 <!-- 			} -->
 <!-- 			"</table>\n"; -->
-<!-- 			*/ -->
+
+
+
+
+
