@@ -20,6 +20,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -32,6 +33,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -40,8 +42,12 @@
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Webtechnologie/uebungen/uebung6/zfquickstart/application/configs/application.ini"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="php.ini" partName="php.ini" title="php.ini" tooltip="C:\Webtechnologie\xampp\php\php.ini" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.ui.DefaultTextEditor" name="php.ini" partName="php.ini" title="php.ini" tooltip="C:\Webtechnologie\xampp\php\php.ini" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.wst.css.core.csssource.source" name="global.css" partName="global.css" title="global.css" tooltip="C:\Webtechnologie\git\wtprojekt\dictro\public\css\global.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Webtechnologie/git/wtprojekt/dictro/public/css/global.css"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
@@ -205,12 +211,16 @@
 <editors>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Webtechnologie/uebungen/uebung6/zfquickstart/application/configs/application.ini"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" uri="file:/C:/Webtechnologie/git/wtprojekt/dictro/public/css/global.css"/>
 </editors>
 <item historyLabel="application.ini" index="0">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="php.ini" index="1">
+<item historyLabel="php.ini" index="1">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="global.css" index="2">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -226,6 +236,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="global.css" tooltip="C:\Webtechnologie\git\wtprojekt\dictro\public\css\global.css">
+<persistable uri="file:/C:/Webtechnologie/git/wtprojekt/dictro/public/css/global.css"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="php.ini" tooltip="C:\Webtechnologie\xampp\php\php.ini">
 <persistable uri="file:/C:/Webtechnologie/xampp/php/php.ini"/>
 </file>

@@ -8,29 +8,26 @@
 	
 	<br>
 	
-	<?php
-	
-// 		if ($this->translation != NULL) {
-// 			var_dump($this->translation);
-// 		}
-		
-// 	?>
-<!-- <table border="0"> -->
-<!-- 	<tr> -->
-<!-- 		<th>German</th> -->
-<!-- 		<th>English</th> -->
-<!-- 	</tr> -->
+<table border="0">
+	<thead>
+		<tr>
+			<th scope="col">German</th>
+			<th scope="col">English</th>
+		</tr>
+	</thead>
 		<?php
-// 			foreach ($this->translation as $vocable) {
-// 			print <<<EOT
-// 			<tr>
-// 			<td>{$this->$vocable['german']}</td>
-// 			<td>{$this->$vocable['english']}</td>
-// 			</tr>		
-// EOT;
-// 			}
-// 	 	?>
-<!-- </table> -->
+		if ($this->translation != NULL){
+			foreach ($this->translation as $vocable) {
+			print <<<EOT
+			<tr>
+			<td>{$vocable[0]}</td>
+			<td>{$vocable[1]}</td>
+			</tr>		
+EOT;
+			}			
+		}
+	 	?>
+</table>
 
 
 </div>
