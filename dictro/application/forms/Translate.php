@@ -8,8 +8,8 @@ class Application_Form_Translate extends Zend_Form
 			// Set the method for the display form to GET
 			$this->setMethod('post');
 			$this->setAction('index');
-			$this->addElement('text', 'vocabel', array(
-					'label' => 'Vokabel:',
+			$this->addElement('text', 'vocable', array(
+					'label' => 'Vocable:',
 					'required' => true,
 					'filters' => array('StringTrim'),
 					'validators' => array(

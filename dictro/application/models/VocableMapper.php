@@ -19,7 +19,7 @@ class Application_Model_VocableMapper
 	public function getDbTable()
 	{
 		if (null === $this->_dbTable) {
-			$this->setDbTable('Application_Model_DbTable_Vocable');
+			$this->setDbTable('Application_Model_Vocable');
 		}
 		return $this->_dbTable;
 	}

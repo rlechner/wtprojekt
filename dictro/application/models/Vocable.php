@@ -2,7 +2,8 @@
 
 class Application_Model_Vocable extends Zend_Db_Table_Abstract
 {
-	//protected $_name = 'vocabel';
+	protected $_name = 'vocable';
+	protected $_primary = 'voc_id';
 	protected $_level;
 	protected $_german;
 	protected $_english;
@@ -19,7 +20,7 @@ class Application_Model_Vocable extends Zend_Db_Table_Abstract
 	{
 		$method = 'set' . $name;
 		if (('mapper' == $name) || !method_exists($this, $method)) {
-			throw new Exception('Invalid vocabel property');
+			throw new Exception('Invalid vocable property');
 		}
 		$this->$method($value);
 	}
@@ -28,7 +29,7 @@ class Application_Model_Vocable extends Zend_Db_Table_Abstract
 	{
 		$method = 'get' . $name;
 		if (('mapper' == $name) || !method_exists($this, $method)) {
-			throw new Exception('Invalid vocabel property');
+			throw new Exception('Invalid vocable property');
 		}
 		return $this->$method();
 	}
