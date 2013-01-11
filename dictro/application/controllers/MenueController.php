@@ -55,6 +55,8 @@ class MenueController extends Zend_Controller_Action
 					$this->view->vision = $vision;
 					
 					$loginForm=null;
+					
+					//$this->view->loginForm = $loginForm;
 
 					//$this->redirect('index');
 					
