@@ -1,4 +1,6 @@
-	
+	<?php 
+	//new Zend_Session_Namespace();
+	?>
 	
 	<style type="text/css">
 	a:link { 
@@ -32,21 +34,11 @@
 	</style> 
 	
 	
-
-<<<<<<< HEAD
-=======
-		/* Showing the submenu when the user is hovering the parent link */
-		#cssmenu > ul li:hover>ul {
-			top: 0px;-
-			opacity: 1;
-		}
-	
-	</style>
->>>>>>> 5dc2cd5dde350f944ac9a725e1ad48e7af721e08
-	
-	
 	
 <div class="menue">
+	
+	
+	<div style="margin-left: 0"> 
 	
 			<?php 
 			
@@ -54,9 +46,9 @@
 			echo $this->loginForm;
 			
 			?>
-	
-		<div style="margin-left: 0"> 
-<<<<<<< HEAD
+
+	</div>
+
 			
 			<!--  <p> -->
 			<!-- <font color="#FFFFFF">Username</font> <input id="username" type="text" name = "name"> -->
@@ -69,32 +61,11 @@
 			<!-- <input style="margin-left: 80px; width: 70px" type="submit" value = "Login" method="POST" action="/Login/login"> -->
 			<!--</p> -->
 			
-
-			
-=======
-		<?php
-			// <p>
-			// <font color="#FFFFFF">Username</font> <input id="username" type="text" name = "name">
-			// <br><br>
-			// <font color="#FFFFFF">Password</font> <input id="password" type="text" name = "passwd">
-			// <br><br>
-			// <input style="margin-left: 80px; width: 70px" type="submit" value = "Login" method="POST" action="/Login/login">
-			// </p>
-			$this->loginForm->setAction($this->url());
-			echo $this->loginForm;
-		?>
->>>>>>> 5dc2cd5dde350f944ac9a725e1ad48e7af721e08
-		</div>
-		
-		
-
 		
 		
 		<a href="/translation" style="padding-left:40px"; title="Translation">Translation</a>
-		
-<!--  
 
-
+<!-- 
 		<div class="links">								
 			<a href="/index" style="padding-left:40px"; title="Home">Home</a>
 			<br>
@@ -113,8 +84,8 @@
 			<br>
 			<a href="/user" style="padding-left:40px"; title="User">Userfunctions</a>
 		</div>  
--->
-		
+ 
+-->		
 		<div id='cssmenu' style="padding-left:16px">
 		<ul>
 		

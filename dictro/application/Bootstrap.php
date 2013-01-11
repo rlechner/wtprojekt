@@ -5,6 +5,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
 	protected function _bootstrap($resource = null)
 	{
+		Zend_Session::start();
 		require_once "DBSettings.php";
 		require_once "Zend/Registry.php";
 		require_once 'Zend/Db.php';
@@ -15,6 +16,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		parent::_bootstrap($resource);
 		
 		
+			
 		require_once 'Zend/Loader/Autoloader.php';
 		
 		//-- Set up Autoload
