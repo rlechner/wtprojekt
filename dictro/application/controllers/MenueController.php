@@ -35,7 +35,7 @@ class MenueController extends Zend_Controller_Action
 
 		$result = $adapter->authenticate($adapter);
 
-
+		
 		if ($result->isValid()) {
 			
 			//new Zend_Session_Namespace();
@@ -44,13 +44,17 @@ class MenueController extends Zend_Controller_Action
 			
 			
 			
+			
 			new Zend_Session_Namespace($loginForm->getValue('username'));
 			
-			$this->redirect('index');
-
+			
+			
 			echo "Anmeldung erfolgreich";
 			
+			$vision = 1;
+			$this->view->vision = $vision;
 			
+			$this->redirect('index');
 			
 			
 			//Zend_Session::start();
@@ -68,6 +72,7 @@ class MenueController extends Zend_Controller_Action
 	
 	
 	}
+	
 	$this->view->loginForm = $loginForm;
 	
 	}
