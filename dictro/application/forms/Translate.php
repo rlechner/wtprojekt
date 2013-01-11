@@ -5,7 +5,7 @@ class Application_Form_Translate extends Zend_Form
 
     public function init() {
 
-			// Set the method for the display form to GET
+			// Set the method for the display form to POST
 			$this->setMethod('post');
 			$this->setAction('index');
 					

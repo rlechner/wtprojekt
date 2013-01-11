@@ -48,6 +48,8 @@ class MenueController extends Zend_Controller_Action
 
 					echo "Anmeldung erfolgreich";
 					
+					
+					
 					$vision=1;
 						
 					$this->view->vision = $vision;

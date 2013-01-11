@@ -18,9 +18,7 @@ class TranslationController extends Zend_Controller_Action
     	
     	if ($this->getRequest()->isPost()) {
     		$this->request = $this->getRequest();
-    		$x = $this->request->getParam('vocable');
-    		var_dump($x);
-    		if ($form->isValid($this->request->getPost())) {
+    		if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
