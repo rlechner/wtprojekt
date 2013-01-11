@@ -1,3 +1,5 @@
+
+	
 	<style type="text/css">
 	a:link { 
 	font-family:Arial,Verdana,Helvetica;
@@ -37,10 +39,10 @@
 	<div style="margin-left: 0"> 
 	
 			<?php 
-				if($this->loginForm != null)
+				if($this->loginForm != null){
 					$this->loginForm->setAction($this->url());
 					echo $this->loginForm;
-				
+				}
 			?>
 
 	</div>
