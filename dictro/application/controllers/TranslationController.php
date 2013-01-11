@@ -18,7 +18,7 @@ class TranslationController extends Zend_Controller_Action
     	
     	if ($this->getRequest()->isPost()) {
     		$this->request = $this->getRequest();
-    		if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
+    		if ($form->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
