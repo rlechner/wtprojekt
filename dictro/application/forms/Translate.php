@@ -8,6 +8,10 @@ class Application_Form_Translate extends Zend_Form
 			// Set the method for the display form to GET
 			$this->setMethod('post');
 			$this->setAction('index');
+					
+			
+			
+			
 			$this->addElement('text', 'vocable', array(
 					'label' => 'Vocable:',
 					'required' => true,
@@ -21,6 +25,13 @@ class Application_Form_Translate extends Zend_Form
 				));
 			$this->addElement('submit', 'index', array('label' => 'translate'));
 
+			
+			$gender = $this->createElement('radio','speech');
+				
+			$gender->setLabel("deToen")
+					->setSeparator(”)
+					->addMultiOption('male','Male')
+					->addMultiOption('female','Female');
     }
 }
 
