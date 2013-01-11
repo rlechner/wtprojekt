@@ -13,8 +13,8 @@ class TranslationController extends Zend_Controller_Action
     {
     	$request = $this->getRequest();
     	$form = new Application_Form_Translate();
-    	$german = "";
-    	$english = "";
+    	$result1 = "";
+    	$result2 = "";
     	
     	if ($this->getRequest()->isPost()) {
     		$this->request = $this->getRequest();
@@ -22,29 +22,45 @@ class TranslationController extends Zend_Controller_Action
     		var_dump($x);
     		if ($form->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
+    			$db->query('SET NAMES utf8;');
     				
     			if (! is_null($db)) {
     				$values = $form->getValues();
     				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
     				// 					$wert = mysqli_fetch_assoc($translation);
-    	
-    				$stmt = $db->prepare(
-    						'SELECT
-                                		german, english
-                      		FROM
-                                		VOCABLE
-			
-                     		WHERE 		german LIKE "%' . $values['vocable'] . '%";');
-    	
-    				$stmt->execute();
-    				$stmt->bind_result($german, $english);
+    				if ($values['speech'] == 'deToen')
+    					{
+		    				$stmt = $db->prepare(
+		    						'SELECT
+		                                		german, english
+		                      		FROM
+		                                		VOCABLE
+					
+		                     		WHERE 		german LIKE "%' . $values['vocable'] . '%";');
+		    	
+		    				$stmt->execute();
+		    				$stmt->bind_result($result1, $result2);
+    					}
+    				else 
+    					{
+    						$stmt = $db->prepare(
+    								'SELECT
+	                                		english, german
+	                      		FROM
+	                                		VOCABLE
     					
+	                     		WHERE 		english LIKE "%' . $values['vocable'] . '%";');
+    					
+    						$stmt->execute();
+    						$stmt->bind_result($result1, $result2);
+    					}
+    						
     				$ergebnis = array();
     				$i = 0;
     				// Array ausgeben
     				while($stmt->fetch()) {
-    					$ergebnis[$i][0]=$german;
-    					$ergebnis[$i][1]=$english;
+    					$ergebnis[$i][0]=$result1;
+    					$ergebnis[$i][1]=$result2;
     					$i++;
     				}
     				$stmt->close();

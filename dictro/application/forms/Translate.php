@@ -10,7 +10,13 @@ class Application_Form_Translate extends Zend_Form
 			$this->setAction('index');
 					
 			
+			$speech = $this->createElement('radio','speech');
 			
+			$speech->setSeparator('')
+			->addMultiOption('deToen','DE/EN')
+			->addMultiOption('enTode','EN/DE')
+			->setValue('deToen');
+			$this->addElement($speech, 'speech');
 			
 			$this->addElement('text', 'vocable', array(
 					'label' => 'Vocable:',
@@ -26,12 +32,7 @@ class Application_Form_Translate extends Zend_Form
 			$this->addElement('submit', 'index', array('label' => 'translate'));
 
 			
-			$gender = $this->createElement('radio','speech');
-				
-			$gender->setLabel("deToen")
-					->setSeparator(”)
-					->addMultiOption('male','Male')
-					->addMultiOption('female','Female');
+			
     }
 }
 
