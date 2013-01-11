@@ -18,8 +18,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		require_once 'Zend/Loader/Autoloader.php';
 		
 		//-- Set up Autoload
+
+		//Zend_Loader_Autoloader::registerAutoload();
+
 		   
     	Zend_Loader_Autoloader::getInstance();
+
 		
 		
 		$mysqli = new mysqli(DBSettings::HOST, DBSettings::USER, DBSettings::PASSWD, DBSettings::SCHEMA);
