@@ -41,7 +41,7 @@
 			<?php 
 				$session = new Zend_Session_Namespace('loggedin');
 				
-				if($session->loggedin != 1){
+				if($session->loggedin != 91){
 				$this->loginForm->setAction($this->url());
 				echo $this->loginForm;
 				}
