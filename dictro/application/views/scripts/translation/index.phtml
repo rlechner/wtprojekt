@@ -1,10 +1,29 @@
-<br /><br />
+	<style>
+	#footerwrap {
+		visibility: hidden;
+	}
+	</style>
+	
+	
 <div id="view-content">
 
-	<div id=Caption>Translation
-	</div>
-	<br>
+	<h1>Translation</h1>
 	
+	<center>
+	
+	<div class="flagg">
+				
+		<div id="gb" class="gb_ger" style="float:left; text-align: right; width: 350px;">
+			<img src="/images/gb_ger.bmp">
+		</div>
+		
+		<div id="de" class="ger_gb" style="float:right; text-align: left; width: 350px;">
+			<img src="/images/ger_gb.bmp">
+		</div>
+					
+	</div>
+				
+	<div id="inhalt" style="min-height:392px;">
 	<?php
 		$this->form->setAction($this->url());
 		echo $this->form;
@@ -32,7 +51,15 @@ EOT;
 			}			
 		}
 	 	?>
-</table>
+		</table>
+		</center>
 
-
+	</div>
+	
+		<div id="footerwrap2" >
+	        <div id="footer2" style="float:right; width:800px">
+	            <?php echo $this->action('index', 'footer'); ?>
+	        </div>
+        </div>
+	
 </div>

@@ -5,14 +5,7 @@
 			<img src="/images/dictro5.gif">
 			</a>
 		</div>
-		
-		<!--  
-		<div class="imgmiddle" style="float: left; width: 340px; text-align: right; height: 100px;">
-		<img src="/images/dictro5.gif" alt="eine grafik">
-		</div>
-		-->
-		
-		
+
 		
 		<div class="imgright" style="float: right; width: 250px; height: 150px;">
 			
@@ -28,13 +21,22 @@
 
 			
 		</div>
-			
 
-			
 		<br><br><br><br><br>
+		
 			
-		<div class="logout" class="bookmark" style="float:right; height: 28px; padding-right: 5px">
-				<a href="/header/logout">Logout</a>
-		</div>
+				<?php
+					$session = new Zend_Session_Namespace('loggedin');
+
+
+					if ($session->loggedin == 91 or $session->loggedin == 92){
+				?>
+					<div class="logout" class="bookmark" style="float:right; height: 28px; padding-right: 5px">
+					<a href="/header/logout">Logout</a>
+					</div>
+				<?php
+					}
+				?>
+				
 			
 		

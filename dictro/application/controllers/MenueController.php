@@ -14,8 +14,10 @@ class MenueController extends Zend_Controller_Action
         // action body
     	require_once 'Zend/Session/Namespace.php';
         
+
 		$result1 = 1;
-		
+
+
 		$db	= Zend_Db_Table_Abstract::getDefaultAdapter();
 
 		$loginForm = new Application_Form_Login($_POST);
@@ -42,6 +44,7 @@ class MenueController extends Zend_Controller_Action
 			//new Zend_Session_Namespace();
 			
 			//$this->_helper->FlashMessenger('Erfolgreich angemeldet');
+
 					//$db = Zend_Registry::get('dbc');
 					$db->query('SET NAMES utf8;');
 					$query = ('SELECT
@@ -50,6 +53,7 @@ class MenueController extends Zend_Controller_Action
 		                                		USERS
 					
 		                     		WHERE 		name = "' . $loginForm->getValue('username') . '";');
+
 					$stmt   = $db -> query($query);
 					$result1 = $stmt -> fetch();
 
@@ -67,13 +71,14 @@ class MenueController extends Zend_Controller_Action
 					
 					//$this->view->loginForm = $loginForm;
 
-					//$this->redirect('index');
+					$this->redirect('index');
 					
 					//Zend_Session::start();
 					//new Zend_Session_Namespace();
 					//session_start();
 					
 					return;
+					
 				}
 				else {
 					
