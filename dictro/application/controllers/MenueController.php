@@ -53,7 +53,7 @@ class MenueController extends Zend_Controller_Action
 			
 					$session = new Zend_Session_Namespace('loggedin');
 					
-					$session->loggedin = $result_info;
+					$session->loggedin = $result1;
 					echo "Anmeldung erfolgreich";
 
 					
