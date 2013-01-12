@@ -60,6 +60,7 @@ class AdminController extends Zend_Controller_Action
     				$stmt->close();
     	
     				$this->view->admin = $ergebnis;
+					
     				//return $this->_helper->redirector('index');
     			}
     		}
