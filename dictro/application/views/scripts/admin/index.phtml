@@ -9,15 +9,19 @@
 <div class="content">
 	
 	<div id="inhalt" style="min-height:460px;">
+	
+		<!-- <div class="search_textfield" style="float: left; width: 450px; height: 50;">
+		 <form method="post" action="admin/searchvocable">
+			// <input type="text" name="search_admin">
+			// <input type="submit" value="Search" style="width: 80px;">
+		 </form> 
+		 </div> -->
 		
-		<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-		<form method="get" action="search_admin.php">
-			<input type="text" name="search_admin">
-			<input type="submit" value="Search" style="width: 80px;">
-		</form> 
-		</div>
-	
-	
+		<?php
+			$this->form->setAction($this->url());
+			echo $this->form;
+		?>
+		
 	
 		<br><br><br>
 	
