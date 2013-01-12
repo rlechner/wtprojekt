@@ -9,25 +9,25 @@ class Application_Form_Login extends Zend_Form
 
 		$this->setAction('index');
 
-        $this->addElement('text', 'vocable', array(
-                'label' => 'Vocable:',
+        $this->addElement('text', 'username', array(
+                'label' => 'Username:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
-            ));       
+            ));
+        
+ 
+        $this->addElement('password', 'password', array(
+            'label' => 'Passwort:',
+            'required' => true,
+            ));
+        
 	
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
-            'label'    => 'Search',
+            'label'    => 'Login',
         	//'label_class' => 'cssKlasseFuerDekorator',
         
             ));
-        
-        $this->addElement('submit', 'submit', array(
-        		'ignore'   => true,
-        		'label'    => 'Delete',
-        		//'label_class' => 'cssKlasseFuerDekorator',
-        
-        ));
 
     }
 }

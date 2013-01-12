@@ -10,24 +10,34 @@ class AdminController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+    
     }
 	
 	public function searchvocableAction(){
+	
+	}
+
+	public function deletevocableAction(){
+	}
+	
+	public function updatevocableAction(){
+	}
+
+	public function insertvocableAction(){
 		
 		$request = $this->getRequest();
-    	$form = new Application_Form_SearchVocableAdmin();
+    	$formSearch = new Application_Form_SearchVocableAdmin();
     	$result1 = "";
     	$result2 = "";
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
+			if (isset($_POST['search_button']) && $formSearch->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
     			if (! is_null($db)) {
-    				$values = $form->getValues();
+    				$values = $formSearch->getValues();
     				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
@@ -56,16 +66,41 @@ class AdminController extends Zend_Controller_Action
     			}
     		}
     	}
-    	$this->view->form = $form;
-    }
-
-	public function deletevocableAction(){
+    	
+		$this->view->formSearch = $formSearch;
+		
+		$formInsert = new Application_Form_InsertVocableAdmin();
+		
+		if ($this->getRequest()->isPost()) {
+			$this->request = $this->getRequest();
+			if (isset($_POST['search_button']) && $formInsert->isValid($this->request->getPost())) {
+				
+				 $db = Zend_Registry::get('dbc');
+				 
+				  $values = $formInsert->getValues();
+  
+                    $db->query('SET NAMES utf8;');
+                    $query  =  ('    INSERT INTO `vocable`(`german`, `english`, `level`) 
+                                            VALUES (' . $formInsert->getValue('german_voc') . ',
+                                                    ' . $formInsert->getValue('english_voc') . ', 
+													' . $formInsert->getValue('level') . ',    
+                                        ');
+                       
+                    $query->execute();
+                    
+				return;
+                /*        
+                }
+                else {
+                    
+                    
+                    echo "Registrierung failed";
+                        
+                }*/
+            }
+        }
+		$this->view->formInsert = $formInsert;
 	}
 	
-	public function updatevocableAction(){
-	}
-
-	public function insertvocableAction(){
-	}
 }
 
