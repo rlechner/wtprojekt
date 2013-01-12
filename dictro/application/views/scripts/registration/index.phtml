@@ -6,7 +6,10 @@
 	<h1>Registration</h1>
 
 	<div class="registration"">
-		
+		<?php 
+			$this->registerForm->setAction($this->url());
+			echo $this->registerForm;
+		?>
 	</div>
 
 </div>
