@@ -2,7 +2,7 @@
 <div class="content" style="height:500px; width: 767px; padding: 20px">
 	
 	<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-	<form method="get" action="searchvocable.php">
+	<form method="get" action="/admin/searchvocable">
 		<input type="text" name="search_admin">
 		<input type="submit" value="Search" style="width: 80px;">
 	</form> 
@@ -15,20 +15,34 @@
 
 	<br><br><br>
 
-	<div class="table" style="float:left; width: 767px">
-		<table>
+	
+		<?php
+		if ($this->admin != NULL){
+		?>
+			<div class="table" style="float:left; width: 767px">
+			<table>
+			<thead>
 			<tr>
-			<th width="350">German</th>
-			<th width="350">English</th>
-			<th width="75"><center>Level<center></th>
+			<th scope="col">German</th>
+			<th scope="col">English</th>
 			</tr>
+			</thead>
+		<?php
+			foreach ($this->admin as $vocable) {
+			print <<<EOT
 			<tr>
-			<td width="350">Viech</td>
-			<td width="350">Jax</td>
-			<td width="75"><center>5<center></td>
-			</tr>
-		</table>
-	</div>
+			<td>{$vocable[0]}</td>
+			<td>{$vocable[1]}</td>
+			</tr>		
+EOT;
+			}
+		?>
+			</table>
+			</div>
+		<?php
+		}
+		?>
+	
 	
 	<br><br><br><br><br>
 
