@@ -74,20 +74,19 @@ class AdminController extends Zend_Controller_Action
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
 			if (isset($_POST['insert_button']) && $formInsert->isValid($this->request->getPost())) {
-				
 				 $db = Zend_Registry::get('dbc');
 				 if (! is_null($db)) {
     				$values = $formInsert->getValues();
   
                    $stmt = $db->prepare( '  INSERT INTO `vocable`(`german`, `english`, `level`) 
-                                            VALUES (' . $values['german_voc'] . ',
-                                                    ' . $values['english_voc'] . ', 
-													' . $values['level'] . ';  
+                                            VALUES ("' . $values['german_voc'] . '",
+                                                    "' . $values['english_voc'] . '", 
+													"' . $values['level'] . '");  
                                         ');
                        
                     $stmt->execute();
-                    
-				return;
+                
+				$this->view->inserterfolgreich = 'Vocable: "' .  $values['german_voc'] . '" successful added';
                 /*        
                 }
                 else {
@@ -96,6 +95,7 @@ class AdminController extends Zend_Controller_Action
                     echo "Registrierung failed";
                         
                 }*/
+				
 				}
             }
         }

@@ -17,6 +17,10 @@
 			<?php
 			$this->formInsert->setAction($this->url());
 			echo $this->formInsert;
+			
+			if ($this->inserterfolgreich != null){
+				echo $this->inserterfolgreich;
+			}
 		?>
 
 	
