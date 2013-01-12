@@ -48,7 +48,7 @@ class MenueController extends Zend_Controller_Action
 		                      		FROM
 		                                		USERS
 					
-		                     		WHERE 		name =  "vando";');
+		                     		WHERE 		name =  "' . $loginForm->getValue('username') . '%";');
 					$info->execute();
 					$info->bind_result($result1);
 			
