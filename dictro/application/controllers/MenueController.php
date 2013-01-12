@@ -14,7 +14,7 @@ class MenueController extends Zend_Controller_Action
         // action body
     	require_once 'Zend/Session/Namespace.php';
         
-		$result1 = "";
+		$result1 = 91;
 		
 		$db	= Zend_Db_Table_Abstract::getDefaultAdapter();
 
@@ -42,21 +42,22 @@ class MenueController extends Zend_Controller_Action
 			//new Zend_Session_Namespace();
 			
 			//$this->_helper->FlashMessenger('Erfolgreich angemeldet');
-					$db_mysqli =  Zend_Registry::get('dbc');
+					$db_mysqli = Zend_Registry::get('dbc');
 					$info = $db_mysqli->prepare('SELECT
-		                                		type
+		                                		userstate
 		                      		FROM
-		                                		users
+		                                		USERS
 					
-		                     		WHERE 		name =  "' . $loginForm->getValue('username') .'";');
+		                     		WHERE 		name =  "vando";');
 					$info->execute();
 					$info->bind_result($result1);
 			
 					$session = new Zend_Session_Namespace('loggedin');
 					
 					$session->loggedin = $result1;
+					$info->close();
+					
 					echo "Anmeldung erfolgreich";
-
 					
 					//$vision=1;
 						
