@@ -32,9 +32,20 @@
 
 			
 		<br><br><br><br><br>
+		
 			
-		<div class="logout" class="bookmark" style="float:right; height: 28px; padding-right: 5px">
-				<a href="/header/logout">Logout</a>
-		</div>
+				<?php
+					$session = new Zend_Session_Namespace('loggedin');
+
+
+					if ($session->loggedin == 91 or $session->loggedin == 92){
+				?>
+					<div class="logout" class="bookmark" style="float:right; height: 28px; padding-right: 5px">
+					<a href="/header/logout">Logout</a>
+					</div>
+				<?php
+					}
+				?>
+				
 			
 		

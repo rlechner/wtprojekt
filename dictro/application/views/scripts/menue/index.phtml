@@ -43,7 +43,7 @@ color:#FFFFFF;
 				$session = new Zend_Session_Namespace('loggedin');
 
 
-				if ($session->loggedin != 91 || $session->loggedin != 91){
+				if ($session->loggedin != 91 and $session->loggedin != 92){
 
 					$this->loginForm->setAction($this->url());
 					echo $this->loginForm;
