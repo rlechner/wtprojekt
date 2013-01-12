@@ -4,55 +4,62 @@
 	}
 </style>
 	
-<div class="content">
+
+	<div class="search_textfield" style="float: left; width: 450px; height: 50;">
+	<form method="get" action="/admin/searchvocable">
+		<input type="text" name="search_admin">
+		<input type="submit" value="Search" style="width: 80px;">
+	</form> 
+	</div>
+
+	<div class="searchbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
+		<input type="submit" action="deletevocable" value="Delete" style="width: 80px;">
+		<input type="submit" action="updatevocable" value="Update" style="width: 80px;">
+	</div>
+
+	<br><br><br>
+
 	
-	<div id="inhalt" style="min-height:460px;">
-		
-		<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-		<form method="get" action="search_admin.php">
-			<input type="text" name="search_admin">
-			<input type="submit" value="Search" style="width: 80px;">
-		</form> 
-		</div>
-	
-	
-	
-		<br><br><br>
-	
-		<div class="table" style="float:left; width: 767px">
+		<?php
+		if ($this->admin != NULL){
+		?>
+			<div class="table" style="float:left; width: 767px">
 			<table>
-				<tr>
-				<th width="350">German</th>
-				<th width="350">English</th>
-				<th width="75"><center>Level<center></th>
-				</tr>
-				<tr>
-				<td width="350">Viech</td>
-				<td width="350">Jax</td>
-				<td width="75"><center>5<center></td>
-				</tr>
+			<thead>
+			<tr>
+			<th scope="col">German</th>
+			<th scope="col">English</th>
+			</tr>
+			</thead>
+		<?php
+			foreach ($this->admin as $vocable) {
+			print <<<EOT
+			<tr>
+			<td>{$vocable[0]}</td>
+			<td>{$vocable[1]}</td>
+			</tr>		
+EOT;
+			}
+		?>
 			</table>
-		</div>
-		
-		<br><br><br><br><br>
-	
-		<div class="insert">
-			<form method="get" action="search_admin.php">
-				<input type="text" name="german_voc" style="width: 340px">
-				<input type="text" name="english_voc" style="width: 340px">
-				<input type="text" name="level_voc" style="width: 75px">
-				<br><br>
-				
-			<div id="buttons">
-				<input type="submit" id="adminButtons" value="Insert">
-				<input type="submit" id="adminButtons" value="Update">
-				<input type="submit" id="adminButtons" value="Delete">
 			</div>
-				
-				
-			</form>
-		</div>
+		<?php
+		}
+		?>
 	
+	
+	<br><br><br><br><br>
+
+	<div class="insert">
+		<form method="get" action="insertvocable.php">
+			<input type="text" name="german_voc" style="width: 340px">
+			<input type="text" name="english_voc" style="width: 340px">
+			<input type="text" name="level_voc" style="width: 75px">
+			<br><br>
+			
+			<input type="submit" value="Insert" style="float:right; width: 80px;">
+		</form>
+
 	</div>
 	
 	<div id="footerwrap2" >
