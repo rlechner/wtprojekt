@@ -42,10 +42,14 @@ color:#FFFFFF;
 			<?php 
 				$session = new Zend_Session_Namespace('loggedin');
 
+
 				if(($session->loggedin) != 1){
 					$this->loginForm->setAction($this->url());
 					echo $this->loginForm;
+
 				}
+
+
 			?>
 
 	</div>
@@ -85,7 +89,6 @@ color:#FFFFFF;
 		
 		<div id="menu8" style="padding-left:16px">
 		<ul>
-		
 		   	<li><a href="/index"><span>Home</span></a></li>
 		   	<li><a href="/game"><span>Game</span></a></li>
 		   	<li><a href="/highscore"><span>Highscore</span></a></li>
@@ -93,6 +96,7 @@ color:#FFFFFF;
 		   	<li><a href="/imprint"><span>Imprint</span></a></li>
 		   	
 		   	<?php if(($session->loggedin) == 1) {?>
+
 			<li><a href="/admin"><span>Admin</span></a></li>
 			<?php } 
 			else if(($session->loggedin) == 1) {?>
@@ -102,6 +106,7 @@ color:#FFFFFF;
 		</ul>
 		</div>
 		
+
 
 	
 </div>

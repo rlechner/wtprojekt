@@ -6,8 +6,9 @@ class Application_Form_Login extends Zend_Form
     public function init()
     {
         $this->setMethod('post');
+
 		$this->setAction('index');
-		
+
         $this->addElement(
             'text', 'username', array(
                 'label' => 'Username:',
