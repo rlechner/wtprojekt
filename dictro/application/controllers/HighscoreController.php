@@ -10,14 +10,11 @@ class HighscoreController extends Zend_Controller_Action
 
     public function indexAction()
     {
-    	$request = $this->getRequest();
     	
     	$result1 = "";
     	$result2 = "";
     	 
-    	if ($this->getRequest()->isPost()) {
-    		$this->request = $this->getRequest();
-    		if ($form->isValid($this->request->getPost())) {
+
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     	
@@ -25,11 +22,13 @@ class HighscoreController extends Zend_Controller_Action
 
     					$stmt = $db->prepare(
     							'SELECT
-	                                		user_id, score
+	                                		name, score
 	                      		FROM
-	                                		highscore
-    	
-	                     		ORDER BY 	score;');
+	                                		highscore, users
+    							WHERE
+    										users.user_id = highscore.user_id
+	                     		ORDER BY 	
+    										score DESC;');
     						
     					$stmt->execute();
     					$stmt->bind_result($result1, $result2);
@@ -48,8 +47,8 @@ class HighscoreController extends Zend_Controller_Action
     				$this->view->highscore = $ergebnis;
     				//return $this->_helper->redirector('index');
     			}
-    		}
-    	}
+    		
+    	
     	
     
 	
