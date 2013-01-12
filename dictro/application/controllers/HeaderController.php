@@ -19,5 +19,6 @@ class HeaderController extends Zend_Controller_Action
     	$this->redirect('index');
     }
 
+
 }
 

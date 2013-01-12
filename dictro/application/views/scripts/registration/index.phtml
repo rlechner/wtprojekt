@@ -1,34 +1,15 @@
 
 
 
-<div class="content" style="padding:20px">
+<div class="content">
 
-	<center><h1>Registration</h1></center>
+	<h1>Registration</h1>
 
-	<div class="registration" style="float:right; width:480px">
-
-		<form action="/registration/register" method="POST">
-		
-			<dl>
-				<dt>Username:</dt>
-				<dd><input type="text" name="user"></dd>
-				<dt>E-Mail:</dt>
-				<dd><input type="text" name="email"></dd>
-				<dt>Password:</dt>
-				<dd><input type="text" name="password1"></dd>
-				<dt>Password:</dt>
-				<dd><input type="text" name="password1"></dd>					
-			</dl>
-	
-			<br>
-			
-			<div class="send" style="float:right; padding-right: 300px">
-				<input type="submit" value="Register" style="width: 70px">
-				<input type="reset" value="Reset" style="width: 70px">
-			</div>
-		
-		</form>	
-	
+	<div class="registration"">
+		<?php 
+			$this->registerForm->setAction($this->url());
+			echo $this->registerForm;
+		?>
 	</div>
 
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 
-class Application_Form_Login extends Zend_Form
+class Application_Form_DeleteVocable extends Zend_Form
 {
     public function init()
     {
@@ -9,25 +9,25 @@ class Application_Form_Login extends Zend_Form
 
 		$this->setAction('index');
 
-        $this->addElement('text', 'username', array(
-                'label' => 'Username:',
+        $this->addElement('text', 'vocable', array(
+                'label' => 'Vocable:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
-            ));
-        
- 
-        $this->addElement('password', 'password', array(
-            'label' => 'Passwort:',
-            'required' => true,
-            ));
-        
+            ));       
 	
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
-            'label'    => 'Login',
+            'label'    => 'Search',
         	//'label_class' => 'cssKlasseFuerDekorator',
         
             ));
+        
+        $this->addElement('submit', 'submit', array(
+        		'ignore'   => true,
+        		'label'    => 'Delete',
+        		//'label_class' => 'cssKlasseFuerDekorator',
+        
+        ));
 
     }
 }
