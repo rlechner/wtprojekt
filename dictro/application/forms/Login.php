@@ -15,15 +15,12 @@ class Application_Form_Login extends Zend_Form
                 'filters'    => array('StringTrim'),
             ));
         
-       
-        
  
         $this->addElement('password', 'password', array(
             'label' => 'Passwort:',
             'required' => true,
             ));
         
-
 	
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
