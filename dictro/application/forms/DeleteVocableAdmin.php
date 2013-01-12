@@ -15,7 +15,7 @@ class Application_Form_DeleteVocableAdmin extends Zend_Form
                 'filters'    => array('StringTrim'),
             ));       
         
-        $this->addElement('submit', 'deletebutton', array(
+        $this->addElement('submit', 'delete_button', array(
         		'ignore'   => true,
         		'label'    => 'Delete',
         		//'label_class' => 'cssKlasseFuerDekorator',

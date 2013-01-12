@@ -77,15 +77,16 @@ class AdminController extends Zend_Controller_Action
 		
 					$stmt = $db->prepare(
 		    						'DELETE
-		                                		*
+		                                	
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		voc_id = "' . $values['voc_ID'] . '";');
+		                     		WHERE 		voc_id = "' . $values['vocableID'] . '"
+									');
 		    	
 		    				$stmt->execute();
 		
-					$this->view->deleteerfolgreich = 'Vocable: "' .  $values['voc_ID'] . '" successful deleted';
+					$this->view->deleteerfolgreich = 'Vocable: "' .  $values['vocableeID'] . '" successful deleted';
 					/*
 					 }
 					else {
@@ -107,6 +108,8 @@ class AdminController extends Zend_Controller_Action
     	$formSearch = new Application_Form_SearchVocableAdmin();
     	$result1 = "";
     	$result2 = "";
+		$result3 = "";
+		$result4 = "";
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
