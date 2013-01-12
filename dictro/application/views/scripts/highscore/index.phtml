@@ -7,26 +7,29 @@
 		<h1>Highscore</h1>
 			<br>
 			<center>
-				<table>
-				<tr>
-					<th width="125"><center>Ranking</center></th>
-					<th width="250"><center>User</center></th>
-					<th width="125"><center>Score</center></th>
-					 
-				</tr>
-				<tr>
-					<td width="125"><center>1</center></td>
-					<td width="250"><center>Maier, Franzl</center></td>
-					<td width="125"><center>2000</center></td>
-				   
-				</tr>
-				<tr>
-				<td width="125"><center>2</center></td>
-					<td width="250"><center>Vando</center></td>
-					<td width="125"><center>100</center></td>
-				   
-				</tr>
-				</table>
+			
+		<?php
+		if ($this->highscore != NULL){
+		?>
+			<table>
+			<thead>
+			<tr>
+			<th scope="col">User</th>
+			<th scope="col">Score</th>
+			</tr>
+			</thead>
+		<?php
+			foreach ($this->highscore as $highscore) {
+			print <<<EOT
+			<tr>
+			<td>{$highscore[0]}</td>
+			<td>{$highscore[1]}</td>
+			</tr>		
+EOT;
+			}			
+		}
+	 	?>
+	 	
 			</center>
 			
 	</div>
