@@ -52,7 +52,8 @@ class MenueController extends Zend_Controller_Action
 		                      		FROM
 		                                		USERS
 					
-		                     		WHERE 		name =  "'.$loginForm->getValue('username').'";');
+		                     		WHERE 		name = "' . $loginForm->getValue('username') . '";');
+
 					$stmt   = $db -> query($query);
 					$result1 = $stmt -> fetch();
 
@@ -60,7 +61,6 @@ class MenueController extends Zend_Controller_Action
 					
 					$session->loggedin = $result1['userstate'];
 
-					
 					echo "Anmeldung erfolgreich";
 					
 					//$vision=1;
