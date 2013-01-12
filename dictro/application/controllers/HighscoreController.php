@@ -46,7 +46,7 @@ class HighscoreController extends Zend_Controller_Action
     				 
     				$this->view->highscore = $ergebnis;
     				//return $this->_helper->redirector('index');
-    			}
+    }
     		
     	
     	

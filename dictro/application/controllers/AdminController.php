@@ -42,7 +42,7 @@ class AdminController extends Zend_Controller_Action
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
 		    						'SELECT
-		                                		german, english,
+		                                		german, english
 		                      		FROM
 		                                		VOCABLE
 					
@@ -71,6 +71,34 @@ class AdminController extends Zend_Controller_Action
 		
 		$formInsert = new Application_Form_InsertVocableAdmin();
 		
+		if ($this->getRequest()->isPost()) {
+			$this->request = $this->getRequest();
+			if (isset($_POST['search_button']) && $formInsert->isValid($this->request->getPost())) {
+				
+				 $db = Zend_Registry::get('dbc');
+				 
+				  $values = $formInsert->getValues();
+  
+                    $db->query('SET NAMES utf8;');
+                    $query  =  ('    INSERT INTO `vocable`(`german`, `english`, `level`) 
+                                            VALUES (' . $formInsert->getValue('german_voc') . ',
+                                                    ' . $formInsert->getValue('english_voc') . ', 
+													' . $formInsert->getValue('level') . ',    
+                                        ');
+                       
+                    $query->execute();
+                    
+				return;
+                /*        
+                }
+                else {
+                    
+                    
+                    echo "Registrierung failed";
+                        
+                }*/
+            }
+        }
 		$this->view->formInsert = $formInsert;
 	}
 	

@@ -36,7 +36,7 @@ class Application_Form_Registration extends Zend_Form
         
 
 	
-        $this->addElement('submit', 'submit', array(
+        $this->addElement('submit', 'rbutton', array(
             'ignore'   => true,
             'label'    => 'Register',
             ));
