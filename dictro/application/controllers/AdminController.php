@@ -10,60 +10,11 @@ class AdminController extends Zend_Controller_Action
 
     public function indexAction()
     {
-    	if ($_SESSION['vocabelset'] != NULL){
-        	$this->view->admin = $_SESSION['vocabelset'];
-    	}
+    
     }
 	
 	public function searchvocableAction(){
-	/*
-		$request = $this->getRequest();
-    	$form = new Application_Form_SearchVocableAdmin();
-    	$result1 = "";
-    	$result2 = "";
-    	print_r($this->getRequest()->isPost());
-    	if ($this->getRequest()->isPost()) {
-    		
-			$this->request = $this->getRequest();
-			if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
-    			$db = Zend_Registry::get('dbc');
-    			$db->query('SET NAMES utf8;');
-    				
-    			if (! is_null($db)) {
-    				$values = $form->getValues();
-    				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
-    				// 					$wert = mysqli_fetch_assoc($translation);
-					$stmt = $db->prepare(
-		    						'SELECT
-		                                		german, english
-		                      		FROM
-		                                		VOCABLE
-					
-		                     		WHERE 		german LIKE "' . $values['search_voc'] . '%";');
-		    	
-		    				$stmt->execute();
-		    				$stmt->bind_result($result1, $result2);
-    				
-    				$ergebnis = array();
-    				$i = 0;
-    				// Array ausgeben
-    				while($stmt->fetch()) {
-    					$ergebnis[$i][0]=$result1;
-    					$ergebnis[$i][1]=$result2;
-    					$i++;
-    				}
-    				$stmt->close();
-    				$_SESSION['vocabelset'] = $ergebnis;
-    				
-    				$this->redirect('/admin');
-    				//return $this->_helper->redirector('index');
-    			}
-    		}
-    	}
-
-    	
-		$this->view->form = $form;
-		*/
+	
 	}
 
 	public function deletevocableAction(){
@@ -73,25 +24,25 @@ class AdminController extends Zend_Controller_Action
 	}
 
 	public function insertvocableAction(){
-	
+		
 		$request = $this->getRequest();
-    	$form = new Application_Form_InsertVocableAdmin();
+    	$formSearch = new Application_Form_InsertVocableAdmin();
     	$result1 = "";
     	$result2 = "";
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
+			if (isset($_POST['search_button']) && $formSearch->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
     			if (! is_null($db)) {
-    				$values = $form->getValues();
+    				$values = $formSearch->getValues();
     				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
 		    						'SELECT
-		                                		german, english
+		                                		german, english,
 		                      		FROM
 		                                		VOCABLE
 					
@@ -116,8 +67,11 @@ class AdminController extends Zend_Controller_Action
     		}
     	}
     	
-		$this->view->form = $form;
-	
+		$this->view->form = $formSearch;
+		
+		$formInsert = new Application_Form_InsertVocableAdmin();
+		
+		$this->view->admin = $formInsert;
 	}
 	
 }

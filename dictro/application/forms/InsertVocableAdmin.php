@@ -7,37 +7,26 @@ class Application_Form_InsertVocableAdmin extends Zend_Form
     {
         $this->setMethod('post');
 
-		$this->setAction('insertvocable');
-
-        $this->addElement('text', 'search_voc', array(
-                'required' => true,
-                'filters'    => array('StringTrim'),
-            ));
-			
-		 $this->addElement('submit', 'submit', array(
-				'ignore'   => true,
-				'label'    => 'Search',
-				
-			));
+		$this->setAction('admin/insertvocable');
 			
 		$this->addElement('text','german_voc', array(
-				'required'	=> true,
+				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 		
 				
 		$this->addElement('text','english_voc', array(
-				'required'	=> true,
+				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 			
 				
 		$this->addElement('text','level', array(
-				'required'	=> true,
+				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 		
-		 $this->addElement('submit', 'submit', array(
+		 $this->addElement('submit', 'insert_button', array(
 				'ignore'   => true,
 				'label'    => 'Insert',
 			));

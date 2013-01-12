@@ -44,11 +44,13 @@
 		   	<?php 
 		   	if(($session->loggedin) == "91") {
 			?>
-				<li><a href="/admin"><span>Admin</span></a></li>
+				<li>Admin Area</li>
 				<ul>
 					<li><a href="/admin/insertvocable"><span>Insert</span></a></li>
 					<li><a href="/admin/updatevocable"><span>Update</span></a></li>
 					<li><a href="/admin/deletevocable"><span>Delete</span></a></li>
+					
+				</ul>
 			<?php } 
 			else if(($session->loggedin) == "92") {
 			?>
