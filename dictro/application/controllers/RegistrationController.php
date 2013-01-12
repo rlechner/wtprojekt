@@ -11,7 +11,7 @@ class RegistrationController extends Zend_Controller_Action
     public function indexAction()
     {
     	
-        $db	= Zend_Db_Table_Abstract::getDefaultAdapter();
+        //$db	= Zend_Db_Table_Abstract::getDefaultAdapter();
     	$registerForm = new Application_Form_Registration($_POST);
 
     	
@@ -20,7 +20,8 @@ class RegistrationController extends Zend_Controller_Action
     		$this->request = $this->getRequest();
     		if (isset($_POST['rbutton']) && $registerForm->isValid($_POST)) {
     			
-    			//$db = Zend_Registry::get('dbc');
+    			$db = Zend_Registry::get('dbc');
+    			$db->query('SET NAMES utf8;');
     			/*
     			$adapter = new Zend_Auth_Adapter_DbTable(
     					$db,
@@ -37,16 +38,25 @@ class RegistrationController extends Zend_Controller_Action
     			if (User nicht vorhanden) {
 				*/
     				$values = $registerForm->getValues();
-  
-    				$db->query('SET NAMES utf8;');
-    				$query = ('	INSERT INTO `users`(`name`, `password`, `userstate`) 
-    										VALUES (' . $registerForm->getValue('username') . ',
-    												' . $registerForm->getValue('password2') . ', 92)	
-    									');
-   					
-    				//$stmt   = $db -> query($query);
+  					
+    				if( $registerForm->getValue('password1') != $registerForm->getValue('password2')){
+    					$success=-1;
+    					$this->view->success = $success;
+    					//$this->redirect('registration');
+    					
+    					
+    					
+    				}
+    				else{
     				
-    				$query->execute();
+    				
+    				$db->query('SET NAMES utf8;');
+    				$stmt = $db->prepare  ('	INSERT INTO `users`(`name`, `password`, `userstate`) 
+    											VALUES ("' . $registerForm->getValue('username') . '",
+    													"' . $registerForm->getValue('password2') . '", 92)	
+    									');
+    				
+    				$stmt->execute();
     				
     				$success=1;
     				
@@ -55,14 +65,7 @@ class RegistrationController extends Zend_Controller_Action
     				$this->redirect('index');
     				
     				return;
-    			/*		
-    			}
-    			else {
-    				
-    				
-    				echo "Registrierung failed";
-    					
-    			}*/
+    				}
     		}
     	}
     	

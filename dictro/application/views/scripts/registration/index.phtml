@@ -10,9 +10,12 @@
 			$this->registerForm->setAction($this->url());
 			echo $this->registerForm;
 			
-			if($this->success == 1)
+			if($this->success == 1){
 				echo "Registration successful";
-			
+				}
+			else if($this->success == -1){
+				echo "False Password";
+				}
 		?>
 	</div>
 
