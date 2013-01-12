@@ -1,8 +1,12 @@
-
+<style>
+	#footerwrap {
+		visibility: hidden;
+	}
+</style>
 	
 <div class="content">
 	
-	<div id="admin">
+	<div id="inhalt" style="min-height:460px;">
 
 	
 		
@@ -10,11 +14,19 @@
 			$this->formSearch->setAction($this->url());
 			echo $this->formSearch;
 		?>
-		
+		<?php
+			$this->formUpdate->setAction($this->url());
+			echo $this->formUpdate;
+			
+			if ($this->inserterfolgreich != null){
+				echo $this->inserterfolgreich;
+			}
+			
+		?>
 
 	
 		<br><br><br>
-		
+	
 		<?php
 		if ($this->admin != NULL){
 		?>
@@ -22,8 +34,10 @@
 			<table>
 			<thead>
 			<tr>
+			<th scope="col">ID</th>
 			<th scope="col">German</th>
 			<th scope="col">English</th>
+			<th scope="col">Level</th>
 			</tr>
 			</thead>
 		<?php
@@ -32,13 +46,15 @@
 			<tr>
 			<td>{$vocable[0]}</td>
 			<td>{$vocable[1]}</td>
+			<td>{$vocable[2]}</td>
+			<td>{$vocable[3]}</td>
 			</tr>		
 EOT;
 			}
 		}
 		?>
-			</table>
-			</div>
+		</table>
+		</div>
 		
 		
 <!--	
@@ -58,14 +74,14 @@ EOT;
 				
 			</form>
 		</div>
--->	
+-->		
 	</div>
-		<?php
-			$this->formInsert->setAction($this->url());
-			echo $this->formInsert;
-		?>
-
+		
+		
+	<div id="footerwrap2" >
+        <div id="footer2">
+            <?php echo $this->action('index', 'footer'); ?>
+	        </div>
+    </div>
         
 </div>
-
-
