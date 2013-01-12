@@ -16,13 +16,13 @@ class AdminController extends Zend_Controller_Action
 	public function searchvocableAction(){
 		
 		$request = $this->getRequest();
-    	$form = new Application_Form_Search_Vocable_Admin($_POST);
+    	$form = new Application_Form_SearchVocableAdmin();
     	$result1 = "";
     	$result2 = "";
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['submit']) && $form->isValid($_POST)) {
+			if (isset($_POST['submit']) && $form->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
