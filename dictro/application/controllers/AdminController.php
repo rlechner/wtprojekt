@@ -10,17 +10,22 @@ class AdminController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+    	if ($_SESSION['vocabelset'] != NULL){
+        	$this->view->admin = $_SESSION['vocabelset'];
+    	}
     }
 	
 	public function searchvocableAction(){
 		
+		require_once 'application/forms/SearchVocableAdmin.php';
+		
 		$request = $this->getRequest();
-    	$form = new Application_Form_Search_Vocable_Admin($_POST);
+    	$form = new Application_Form_SearchVocableAdmin();
     	$result1 = "";
     	$result2 = "";
-    	
+    	print_r($this->getRequest()->isPost());
     	if ($this->getRequest()->isPost()) {
+    		
 			$this->request = $this->getRequest();
 			if (isset($_POST['submit']) && $form->isValid($_POST)) {
     			$db = Zend_Registry::get('dbc');
@@ -50,13 +55,15 @@ class AdminController extends Zend_Controller_Action
     					$i++;
     				}
     				$stmt->close();
-    	
-    				$this->view->admin = $ergebnis;
+    				$_SESSION['vocabelset'] = $ergebnis;
+    				
+    				$this->redirect('/admin');
     				//return $this->_helper->redirector('index');
     			}
     		}
     	}
     	$this->view->form = $form;
+    
     }
 
 	public function deletevocableAction(){
