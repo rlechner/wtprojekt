@@ -73,20 +73,19 @@ class AdminController extends Zend_Controller_Action
 		
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['search_button']) && $formInsert->isValid($this->request->getPost())) {
+			if (isset($_POST['insert_button']) && $formInsert->isValid($this->request->getPost())) {
 				
 				 $db = Zend_Registry::get('dbc');
-				 
-				  $values = $formInsert->getValues();
+				 if (! is_null($db)) {
+    				$values = $formInsert->getValues();
   
-                    $db->query('SET NAMES utf8;');
-                    $query  =  ('    INSERT INTO `vocable`(`german`, `english`, `level`) 
-                                            VALUES (' . $formInsert->getValue('german_voc') . ',
-                                                    ' . $formInsert->getValue('english_voc') . ', 
-													' . $formInsert->getValue('level') . ',    
+                   $stmt = $db->prepare( '  INSERT INTO `vocable`(`german`, `english`, `level`) 
+                                            VALUES (' . $values['german_voc'] . ',
+                                                    ' . $values['english_voc'] . ', 
+													' . $values['level'] . ';  
                                         ');
                        
-                    $query->execute();
+                    $stmt->execute();
                     
 				return;
                 /*        
@@ -97,6 +96,7 @@ class AdminController extends Zend_Controller_Action
                     echo "Registrierung failed";
                         
                 }*/
+				}
             }
         }
 		$this->view->formInsert = $formInsert;
