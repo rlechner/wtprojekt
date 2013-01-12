@@ -7,7 +7,7 @@ class Application_Form_Registration extends Zend_Form
     {
         $this->setMethod('post');
         
-		$this->setAction('index');
+		$this->setAction('register');
 
         $this->addElement('text', 'username', array(
                 'label' => 'Username:',

@@ -18,13 +18,7 @@ class HeaderController extends Zend_Controller_Action
     	Zend_Session::destroy(true);
     	$this->redirect('index');
     }
-    
-    public function registerAction(){
-    	
-    	$registerForm = new Application_Form_Registration($_POST);
-    	
-    	$this->view->registerForm = $registerForm;
-    }
+
 
 }
 
