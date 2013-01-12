@@ -34,23 +34,6 @@ class MenueController extends Zend_Controller_Action
 			$adapter->setCredential($loginForm->getValue('password'));
 	
 			$result = $adapter->authenticate($adapter);
-<<<<<<< HEAD
-	
-	
-				if ($result->isValid()) {
-					
-					//new Zend_Session_Namespace();
-					
-					$this->_helper->FlashMessenger('Erfolgreich angemeldet');
-					
-					//var_dump ($result);
-
-					$session = new Zend_Session_Namespace('loggedin');
-					$session->loggedin = 1;
-					
-					//echo "Anmeldung erfolgreich";
-=======
-
 		
 			if ($result->isValid()) {
 			
@@ -63,7 +46,7 @@ class MenueController extends Zend_Controller_Action
 					
 					$session->loggedin = 1;
 					echo "Anmeldung erfolgreich";
->>>>>>> a99caa9ca257c055fdc79ec63024a75586b8776f
+
 					
 					$vision=1;
 						
