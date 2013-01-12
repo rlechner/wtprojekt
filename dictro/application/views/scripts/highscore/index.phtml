@@ -1,3 +1,8 @@
+<style>
+tbody td{
+	text-align:center;
+}
+</style>
 
 
 <div class="content">
@@ -6,14 +11,16 @@
 			
 		<h1>Highscore</h1>
 			<br>
-			<center>
-			
+		<div id="result">
+		<center>	
 		<?php
 		if ($this->highscore != NULL){
+		$i = 1;
 		?>
 			<table>
 			<thead>
 			<tr>
+			<th scope="col">Rank</th>
 			<th scope="col">User</th>
 			<th scope="col">Score</th>
 			</tr>
@@ -21,17 +28,23 @@
 		<?php
 			foreach ($this->highscore as $highscore) {
 			print <<<EOT
+			
 			<tr>
+			<td>{$i}</td>
 			<td>{$highscore[0]}</td>
 			<td>{$highscore[1]}</td>
 			</tr>		
 EOT;
+			$i++;
+			if($i > 10)
+				goto exitHighscore;
 			}			
 		}
+		exitHighscore:
 	 	?>
 	 	</table>
 			</center>
-			
+		</div>		
 	</div>
 	
 </div>
