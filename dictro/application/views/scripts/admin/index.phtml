@@ -10,26 +10,11 @@
 	
 	<div id="inhalt" style="min-height:460px;">
 
-		
-		<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-		<form method="POST" action="admin/searchvocable">
-			<input type="text" name="search_admin">
-			<input type="submit" value="Search" style="width: 80px;">
-		</form> 
-		</div>
-
-
 	
-		<!-- <div class="search_textfield" style="float: left; width: 450px; height: 50;">
-		 <form method="post" action="admin/searchvocable">
-			// <input type="text" name="search_admin">
-			// <input type="submit" value="Search" style="width: 80px;">
-		 </form> 
-		 </div> -->
 		
 		<?php
-			//$this->form->setAction($this->url());
-			//echo $this->form;
+			$this->formSearch->setAction($this->url());
+			echo $this->formSearch;
 		?>
 		
 
@@ -61,8 +46,8 @@ EOT;
 		</table>
 		</div>
 		
-		<br><br><br><br><br>
-	
+		
+<!--	
 		<div class="insert">
 			<form method="get" action="search_admin.php">
 				<input type="text" name="german_voc" style="width: 340px">
@@ -79,9 +64,13 @@ EOT;
 				
 			</form>
 		</div>
-	
+-->	
 	</div>
-	
+		<?php
+			$this->formInsert->setAction($this->url());
+			echo $this->formInsert;
+		?>
+		
 	<div id="footerwrap2" >
         <div id="footer2">
             <?php echo $this->action('index', 'footer'); ?>

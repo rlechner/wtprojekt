@@ -26,7 +26,7 @@ class AdminController extends Zend_Controller_Action
 	public function insertvocableAction(){
 		
 		$request = $this->getRequest();
-    	$formSearch = new Application_Form_InsertVocableAdmin();
+    	$formSearch = new Application_Form_SearchVocableAdmin();
     	$result1 = "";
     	$result2 = "";
     	
@@ -67,11 +67,11 @@ class AdminController extends Zend_Controller_Action
     		}
     	}
     	
-		$this->view->form = $formSearch;
+		$this->view->formSearch = $formSearch;
 		
 		$formInsert = new Application_Form_InsertVocableAdmin();
 		
-		$this->view->admin = $formInsert;
+		$this->view->formInsert = $formInsert;
 	}
 	
 }

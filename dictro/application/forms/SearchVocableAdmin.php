@@ -19,3 +19,5 @@ class Application_Form_SearchVocableAdmin extends Zend_Form
 				'label'    => 'Search',
 				
 			));
+	}
+}
