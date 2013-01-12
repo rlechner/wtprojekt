@@ -8,11 +8,13 @@
 				$session = new Zend_Session_Namespace('loggedin');
 
 
-				if(($session->loggedin) != 1){
+				if ($session->loggedin != 91 and $session->loggedin != 92){
+
 					$this->loginForm->setAction($this->url());
 					echo $this->loginForm;
 
 				}
+				
 
 
 			?>
@@ -41,11 +43,13 @@
 		   	<li><a href="/contact"><span>Contact</span></a></li>
 		   	<li><a href="/imprint"><span>Imprint</span></a></li>
 		   	
-		   	<?php if(($session->loggedin) == 1) {?>
+
+		   	<?php if(($session->loggedin) == 91) {?>
 
 			<li><a href="/admin"><span>Admin</span></a></li>
 			<?php } 
-			else if(($session->loggedin) == 1) {?>
+			else if(($session->loggedin) == 92) {?>
+
 		   	<li><a href="/user"><span>User</span></a></li>
 		   	<?php } ?>
 
