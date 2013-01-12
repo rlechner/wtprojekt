@@ -7,7 +7,7 @@ class Application_Form_SearchVocableAdmin extends Zend_Form
     {
         $this->setMethod('post');
 
-		$this->setAction('admin/searchvocable');
+		$this->setAction('admin/insertvocable');
 
         $this->addElement('text', 'search_voc', array(
                 'required' => true,
