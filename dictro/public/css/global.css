@@ -230,19 +230,19 @@ ul#cssmenu > ul, #cssmenu > ul ul {
 #menu8 li a:link, #menu8 li a:visited {
 	color: #777;
 	display: block;
-	background: url(images/menu7.gif) non-repeat;
+	background: url(images/menu7.gif) no-repeat;
 	padding: 8px 0 0 20px;
 }
 	
 #menu8 li a:hover {
 	color: #257EB7;
-	background: url(images/menu7.gif) non-repeat 0 -32px;
+	background: url(images/menu7.gif) no-repeat 0 -32px;
 	padding: 8px 0 0 25px;
 }
 	
 #menu8 li a:active {
 	color: #fff;
-	background: url(images/menu7.gif) non-repeat 0 -64px;
+	background: url(images/menu7.gif) no-repeat 0 -64px;
 	padding: 8px 0 0 25px;
 }
 
