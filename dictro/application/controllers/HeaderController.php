@@ -12,7 +12,12 @@ class HeaderController extends Zend_Controller_Action
     {
         // action body
     }
-
+    
+    public function logoutAction()
+    {
+    	Zend_Session::destroy(true);
+    	$this->redirect('index');
+    }
 
 }
 
