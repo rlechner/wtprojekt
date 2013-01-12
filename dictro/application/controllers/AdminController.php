@@ -22,7 +22,7 @@ class AdminController extends Zend_Controller_Action
 		if ($this->getRequest()->isPost()) {
     		$this->request = $this->getRequest();
 			
-			if (isset($_POST['index']) && $form->isValid($this->request->getPost())) {
+			if (isset($_POST['submit'])){
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
 				

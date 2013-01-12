@@ -1,6 +1,10 @@
-
-<div class="content" style="height:500px; width: 767px; padding: 20px">
+<style>
+	#footerwrap {
+		visibility: hidden;
+	}
+</style>
 	
+
 	<div class="search_textfield" style="float: left; width: 450px; height: 50;">
 	<form method="get" action="/admin/searchvocable">
 		<input type="text" name="search_admin">
@@ -55,8 +59,14 @@ EOT;
 			
 			<input type="submit" value="Insert" style="float:right; width: 80px;">
 		</form>
-	</div>
 
+	</div>
 	
+	<div id="footerwrap2" >
+        <div id="footer2">
+            <?php echo $this->action('index', 'footer'); ?>
+	        </div>
+    </div>
+        
 </div>
 
