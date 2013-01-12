@@ -289,6 +289,8 @@
 	    border-radius: 10px;
 	    border: 1px solid #191970;
 	    margin: 5px;
+		float:right; 
+		width:800px
 	}
 
 	#inhalt {
@@ -360,5 +362,10 @@
 	#clear {    
 		clear: both;
 	}    
+	
+	#adminButtons{
+		width: 80px;
+		float:right;
+	}
 	
 
