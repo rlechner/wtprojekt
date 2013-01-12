@@ -1,10 +1,4 @@
-	<style>
-	#footerwrap {
-		visibility: hidden;
-	}
-	</style>
-	
-	
+
 <div id="view-content">
 
 	<h1>Translation</h1>
@@ -23,7 +17,9 @@
 					
 	</div>
 				
-	<div id="inhalt" style="min-height:392px;">
+	<br>
+				
+	<div id="inhalt" >
 	<?php
 		$this->form->setAction($this->url());
 		echo $this->form;
@@ -56,10 +52,6 @@ EOT;
 
 	</div>
 	
-		<div id="footerwrap2" >
-	        <div id="footer2" style="float:right; width:800px">
-	            <?php echo $this->action('index', 'footer'); ?>
-	        </div>
-        </div>
+
 	
 </div>

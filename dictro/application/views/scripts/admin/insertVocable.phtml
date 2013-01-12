@@ -1,15 +1,9 @@
-<style>
-	#footerwrap {
-		visibility: hidden;
-	}
-</style>
+
 	
 <div class="content">
 	
-	<div id="inhalt" style="min-height:460px;">
+	<div id="admin">
 
-	
-		
 		<?php
 			$this->formSearch->setAction($this->url());
 			echo $this->formSearch;
@@ -24,7 +18,7 @@
 		?>
 
 	
-		<br><br><br>
+		<br>
 	
 		<?php
 		if ($this->admin != NULL){
@@ -48,35 +42,9 @@ EOT;
 			}
 		}
 		?>
-		</table>
-		</div>
-		
-		
-<!--	
-		<div class="insert">
-			<form method="get" action="search_admin.php">
-				<input type="text" name="german_voc" style="width: 340px">
-				<input type="text" name="english_voc" style="width: 340px">
-				<input type="text" name="level_voc" style="width: 75px">
-				<br><br>
-				
-			<div id="buttons">
-				<input type="submit" id="adminButtons" value="Insert">
-				<input type="submit" id="adminButtons" value="Update">
-				<input type="submit" id="adminButtons" value="Delete">
+			</table>
 			</div>
-				
-				
-			</form>
-		</div>
--->		
+		
 	</div>
-		
-		
-	<div id="footerwrap2" >
-        <div id="footer2">
-            <?php echo $this->action('index', 'footer'); ?>
-	        </div>
-    </div>
-        
+
 </div>
