@@ -18,7 +18,7 @@ class TranslationController extends Zend_Controller_Action
     	
     	if ($this->getRequest()->isPost()) {
     		$this->request = $this->getRequest();
-    		if ($form->isValid($this->request->getPost())) {
+    		if (isset($_POST['index']) && $form->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
@@ -34,7 +34,7 @@ class TranslationController extends Zend_Controller_Action
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		german LIKE "%' . $values['vocable'] . '%";');
+		                     		WHERE 		german LIKE "' . $values['vocable'] . '%";');
 		    	
 		    				$stmt->execute();
 		    				$stmt->bind_result($result1, $result2);
@@ -47,7 +47,7 @@ class TranslationController extends Zend_Controller_Action
 	                      		FROM
 	                                		VOCABLE
     					
-	                     		WHERE 		english LIKE "%' . $values['vocable'] . '%";');
+	                     		WHERE 		english LIKE "' . $values['vocable'] . '%";');
     					
     						$stmt->execute();
     						$stmt->bind_result($result1, $result2);

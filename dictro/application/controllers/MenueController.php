@@ -43,11 +43,10 @@ class MenueController extends Zend_Controller_Action
 			//$this->_helper->FlashMessenger('Erfolgreich angemeldet');
 			
 			
-					new Zend_Session_Namespace($loginForm->getValue('username'));
-
+					$session = new Zend_Session_Namespace('loggedin');
+					
+					$session->loggedin = 1;
 					echo "Anmeldung erfolgreich";
-					
-					
 					
 					$vision=1;
 						
