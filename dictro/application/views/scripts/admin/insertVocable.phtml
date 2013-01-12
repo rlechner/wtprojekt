@@ -1,0 +1,78 @@
+<style>
+	#footerwrap {
+		visibility: hidden;
+	}
+</style>
+	
+<div class="content">
+	
+	<div id="inhalt" style="min-height:460px;">
+
+	
+		
+		<?php
+			$this->formSearch->setAction($this->url());
+			echo $this->formSearch;
+		?>
+		
+
+	
+		<br><br><br>
+	
+		<?php
+		if ($this->admin != NULL){
+		?>
+			<div class="table" style="float:left; width: 767px">
+			<table>
+			<thead>
+			<tr>
+			<th scope="col">German</th>
+			<th scope="col">English</th>
+			</tr>
+			</thead>
+		<?php
+			foreach ($this->admin as $vocable) {
+			print <<<EOT
+			<tr>
+			<td>{$vocable[0]}</td>
+			<td>{$vocable[1]}</td>
+			</tr>		
+EOT;
+			}
+		}
+		?>
+		</table>
+		</div>
+		
+		
+<!--	
+		<div class="insert">
+			<form method="get" action="search_admin.php">
+				<input type="text" name="german_voc" style="width: 340px">
+				<input type="text" name="english_voc" style="width: 340px">
+				<input type="text" name="level_voc" style="width: 75px">
+				<br><br>
+				
+			<div id="buttons">
+				<input type="submit" id="adminButtons" value="Insert">
+				<input type="submit" id="adminButtons" value="Update">
+				<input type="submit" id="adminButtons" value="Delete">
+			</div>
+				
+				
+			</form>
+		</div>
+-->	
+	</div>
+		<?php
+			$this->formInsert->setAction($this->url());
+			echo $this->formInsert;
+		?>
+		
+	<div id="footerwrap2" >
+        <div id="footer2">
+            <?php echo $this->action('index', 'footer'); ?>
+	        </div>
+    </div>
+        
+</div>
