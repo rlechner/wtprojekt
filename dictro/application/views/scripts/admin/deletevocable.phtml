@@ -1,15 +1,8 @@
-<style>
-	#footerwrap {
-		visibility: hidden;
-	}
-</style>
-	
+
 <div class="content">
 	
 	<div id="inhalt" style="min-height:460px;">
 
-	
-		
 		<?php
 			$this->formSearch->setAction($this->url());
 			echo $this->formSearch;
@@ -24,12 +17,11 @@
 		?>
 
 	
-		<br><br><br>
+		<br>
 	
 		<?php
 		if ($this->admin != NULL){
 		?>
-			<div class="table" style="float:left; width: 767px">
 			<table>
 			<thead>
 			<tr>
@@ -51,16 +43,7 @@ EOT;
 		}
 		?>
 		</table>
-		</div>
-		
 		
 	</div>
-		
-		
-	<div id="footerwrap2" >
-        <div id="footer2">
-            <?php echo $this->action('index', 'footer'); ?>
-	        </div>
-    </div>
         
 </div>
