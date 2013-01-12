@@ -14,7 +14,10 @@
 			$this->formSearch->setAction($this->url());
 			echo $this->formSearch;
 		?>
-		
+			<?php
+			$this->formInsert->setAction($this->url());
+			echo $this->formInsert;
+		?>
 
 	
 		<br><br><br>
@@ -62,12 +65,9 @@ EOT;
 				
 			</form>
 		</div>
--->	
+-->		
 	</div>
-		<?php
-			$this->formInsert->setAction($this->url());
-			echo $this->formInsert;
-		?>
+		
 		
 	<div id="footerwrap2" >
         <div id="footer2">
