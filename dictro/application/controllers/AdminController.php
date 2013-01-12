@@ -66,7 +66,7 @@ class AdminController extends Zend_Controller_Action
 		 
 		$this->view->formSearch = $formSearch;
 		
-		$formDelete = new Application_Form_DeleteVocabelAdmin();
+		$formDelete = new Application_Form_DeleteVocableAdmin();
 		
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();

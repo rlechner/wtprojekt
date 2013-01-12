@@ -1,7 +1,7 @@
 <?php
 
 
-class Application_Form_DeleteVocabelAdmin extends Zend_Form
+class Application_Form_DeleteVocableAdmin extends Zend_Form
 {
     public function init()
     {
