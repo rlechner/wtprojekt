@@ -1,14 +1,8 @@
 
-
-<style>
-	#footerwrap {
-		visibility: hidden;
-	}
-</style>
 	
 <div class="content">
 	
-	<div id="inhalt" style="min-height:460px;">
+	<div id="admin">
 
 	
 		
@@ -20,7 +14,7 @@
 
 	
 		<br><br><br>
-	
+		
 		<?php
 		if ($this->admin != NULL){
 		?>
@@ -43,8 +37,8 @@ EOT;
 			}
 		}
 		?>
-		</table>
-		</div>
+			</table>
+			</div>
 		
 		
 <!--	
@@ -70,12 +64,7 @@ EOT;
 			$this->formInsert->setAction($this->url());
 			echo $this->formInsert;
 		?>
-		
-	<div id="footerwrap2" >
-        <div id="footer2">
-            <?php echo $this->action('index', 'footer'); ?>
-	        </div>
-    </div>
+
         
 </div>
 

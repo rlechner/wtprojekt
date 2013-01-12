@@ -272,50 +272,6 @@
 		margin: 0;
 		padding: 0;
 	}
-
-	
-	/* Dynamischer Content */
-	/***********************/
-	#footerwrap2 {
-	    width: 820px;
-	    margin: 5 auto;
-		clear: both;
-		float:right;
-	}
-		
-	#footer2 {
-	    height: 40px;
-	    background: #191970;
-	    border-radius: 10px;
-	    border: 1px solid #191970;
-	    margin: 5px;
-		float:right; 
-		width:800px
-	}
-
-	#inhalt {
-		background: #4682b4; 
-		margin: -1px; 
-		border-radius: 10px; 
-		border: 1px solid #4682b4; 
-		padding: 20px
-	}
-	
-	
-	/* Imprint */
-	/***********/
-	#imprint{
-		float:left; 
-		height:946px; 
-		padding-left: 20px; 
-		padding-right: 20px;
-		background: #4682b4;
-	    border: 1px solid #4682b4;
-	    border-radius: 10px 10px 10px 10px;
-	    height: 940px;
-	    width: 768px;		
-	}
-
 	
 	/* Links */
 	/*********/
