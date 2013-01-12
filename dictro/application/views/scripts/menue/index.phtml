@@ -1,35 +1,36 @@
 
 	
-	<style type="text/css">
-	a:link { 
-	font-family:Arial,Verdana,Helvetica;
-	font-size:10pt;
-	font-weight:500;
-	color:#FFFFFF;
-	} 
-	
-	a:visited { 
-	font-family:Arial,Verdana,Helvetica;
-	font-size:10pt;
-	font-weight:500;
-	color:#FFFFFF;
-	} 
-	
-	a:active { 
-	font-family:Arial,Verdana,Helvetica;
-	font-size:10pt;
-	font-weight:500;
-	color:#FFFFFF;
-	} 
-	
-	a:hover { 
-	font-family:Arial,Verdana,Helvetica;
-	font-size:10pt;
-	font-weight:500;
-	color:#FFFFFF;
-	} 
+<!-- <style type="text/css">
 
-	</style> 
+a:link {
+	font-family:Arial,Verdana,Helvetica;
+	font-size:10pt;
+	font-weight:500;
+	color:#FFFFFF;
+}
+	
+a:visited {
+font-family:Arial,Verdana,Helvetica;
+font-size:10pt;
+font-weight:500;
+color:#FFFFFF;
+}
+	
+a:active {
+font-family:Arial,Verdana,Helvetica;
+font-size:10pt;
+font-weight:500;
+color:#FFFFFF;
+}
+	
+a:hover {
+font-family:Arial,Verdana,Helvetica;
+font-size:10pt;
+font-weight:500;
+color:#FFFFFF;
+}
+
+</style>*/ -->
 	
 	
 	
@@ -40,10 +41,12 @@
 	
 			<?php 
 				$session = new Zend_Session_Namespace('loggedin');
+
 				
 				if($session->loggedin != 91){
 				$this->loginForm->setAction($this->url());
 				echo $this->loginForm;
+
 				}
 
 
@@ -84,7 +87,7 @@
  
 -->		
 		
-		<div id="cssmenu" style="padding-left:16px">
+		<div id="menu8" style="padding-left:16px">
 		<ul>
 		   	<li><a href="/index"><span>Home</span></a></li>
 		   	<li><a href="/game"><span>Game</span></a></li>
@@ -92,13 +95,14 @@
 		   	<li><a href="/contact"><span>Contact</span></a></li>
 		   	<li><a href="/imprint"><span>Imprint</span></a></li>
 		   	
-		   	<?php if($session->loggedin == 1) {?>
+		   	<?php if(($session->loggedin) == 1) {?>
+
 			<li><a href="/admin"><span>Admin</span></a></li>
 			<?php } 
-			else if($this->vision == 2) {?>
+			else if(($session->loggedin) == 1) {?>
 		   	<li><a href="/user"><span>User</span></a></li>
 		   	<?php } ?>
-		   	
+
 		</ul>
 		</div>
 		

@@ -73,11 +73,5 @@ class TranslationController extends Zend_Controller_Action
  
 
 
-    public function deToenAction()
-    {
-        
-
-	}
-
 }
 

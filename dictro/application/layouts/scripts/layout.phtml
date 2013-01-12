@@ -1,5 +1,4 @@
 	<style>
-		@import url("reset.css");
 	
 	body {
 	    font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -82,46 +81,6 @@
 	    margin: 5px;
 	}
     
-    /* Styles für das Menü */	
-	/***********************/
-
-	#menu8 {
-			width: 200px;
-			margin-top: 10px;
-		}	
-		
-	#menu8 li a {
-			text-decoration: none;
-			height: 32px;
-		  	voice-family: "\"}\""; 
-		  	voice-family: inherit;
-		  	height: 24px;
-		}
-			
-	#menu8 li a:link, #menu8 li a:visited {
-			color: #777;
-			display: block;
-			background: url(images/menu8.gif);
-			padding: 8px 0 0 20px;
-		}
-			
-	#menu8 li a:hover {
-			color: #257EB7;
-			background: url(images/menu8.gif) 0 -32px;
-			padding: 8px 0 0 25px;
-		}
-			
-	#menu8 li a:active {
-			color: #fff;
-			background: url(images/menu8.gif) 0 -64px;
-			padding: 8px 0 0 25px;
-		}
-	
-	#menu8 ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
 }
 
 </style>
@@ -144,15 +103,15 @@
 	    
 	    <div id="leftcolumnwrap"  class="menue" style="float:left">
 		    <div id="leftcolumn">
-			    <div id="menu8">
+				<div id="menu8">
 			        <?php echo $this->action('index', 'menue'); ?>
-			    </div>
+				</div>
 		    </div>
 	    </div>
 		
 		<div id="contentwrap" class="content" style="float:right">
 		    <div id="content">
-		         <?php echo $this->layout()->content; ?>
+		         <?php echo $this->layout()->content; ?> 
 			</div>
         </div>
         
