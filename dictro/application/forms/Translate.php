@@ -18,6 +18,8 @@ class Application_Form_Translate extends Zend_Form
 			->setValue('deToen');
 			$this->addElement($speech, 'speech');
 			
+			
+			
 			$this->addElement('text', 'vocable', array(
 					'label' => 'Vocable:',
 					'required' => true,
