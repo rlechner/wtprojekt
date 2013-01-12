@@ -26,15 +26,15 @@
 <div class="content" style="height:500px; width: 767px; padding: 20px">
 	
 	<div class="search_textfield" style="float: left; width: 450px; height: 50;">
-	<form method="get" action="search_admin.php">
+	<form method="get" action="searchvocable.php">
 		<input type="text" name="search_admin">
 		<input type="submit" value="Search" style="width: 80px;">
 	</form> 
 	</div>
 
 	<div class="searchbuttonright" style="float: right; width: 250px; text-align: right; height: 50px;">
-		<input type="submit" value="Delete" style="width: 80px;">
-		<input type="submit" value="Update" style="width: 80px;">
+		<input type="submit" action="deletevocable" value="Delete" style="width: 80px;">
+		<input type="submit" action="updatevocable" value="Update" style="width: 80px;">
 	</div>
 
 	<br><br><br>
@@ -57,7 +57,7 @@
 	<br><br><br><br><br>
 
 	<div class="insert">
-		<form method="get" action="search_admin.php">
+		<form method="get" action="insertvocable.php">
 			<input type="text" name="german_voc" style="width: 340px">
 			<input type="text" name="english_voc" style="width: 340px">
 			<input type="text" name="level_voc" style="width: 75px">
