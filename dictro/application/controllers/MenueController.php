@@ -42,7 +42,8 @@ class MenueController extends Zend_Controller_Action
 			//new Zend_Session_Namespace();
 			
 			//$this->_helper->FlashMessenger('Erfolgreich angemeldet');
-					$info = $db->prepare('SELECT
+					$db_mysqli =  Zend_Registry::get('dbc');
+					$info = $db_mysqli->prepare('SELECT
 		                                		type
 		                      		FROM
 		                                		users
@@ -57,9 +58,9 @@ class MenueController extends Zend_Controller_Action
 					echo "Anmeldung erfolgreich";
 
 					
-					$vision=1;
+					//$vision=1;
 						
-					$this->view->vision = $vision;
+					//$this->view->vision = $vision;
 					
 					$loginForm=null;
 					
