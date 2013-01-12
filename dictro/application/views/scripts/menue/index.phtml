@@ -19,19 +19,6 @@
 
 	</div>
 
-			
-			<!--  <p> -->
-			<!-- <font color="#FFFFFF">Username</font> <input id="username" type="text" name = "name"> -->
-			<!-- <br><br> --> 
-			<!-- <font color="#FFFFFF">Password</font> <input id="password" type="text" name = "passwd"> -->
-			
-			<!-- <br> -->
-			<!-- <a href="/Registration" style="padding-left:80px; FONT: SIZE=5"; title="Registration">Registration</a> -->
-			<!-- <br> -->
-			<!-- <input style="margin-left: 80px; width: 70px" type="submit" value = "Login" method="POST" action="/Login/login"> -->
-			<!--</p> -->
-
-	
 		<div id="menu8" style="padding-left:15px">
 		<br>
 		<ul>
@@ -41,15 +28,17 @@
 		   	<li><a href="/contact"><span>Contact</span></a></li>
 		   	<li><a href="/imprint"><span>Imprint</span></a></li>
 		   	
+		   	<br>
+		   	
 		   	<?php 
 		   	if(($session->loggedin) == "91") {
 			?>
-				<li>Admin Area</li>
+				
+				<span style="color: #fff;">Admin Area</span>
 				<ul>
 					<li><a href="/admin/insertvocable"><span>Insert</span></a></li>
 					<li><a href="/admin/updatevocable"><span>Update</span></a></li>
 					<li><a href="/admin/deletevocable"><span>Delete</span></a></li>
-					
 				</ul>
 			<?php } 
 			else if(($session->loggedin) == "92") {
