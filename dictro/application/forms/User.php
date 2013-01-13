@@ -7,7 +7,7 @@ class Application_Form_User extends Zend_Form
     {
         $this->setMethod('post');
 
-		$this->setAction('user/userFunction');
+		$this->setAction('user/userfunction');
 
 		 $this->addElement('submit', 'resetHighscore', array(
 				'ignore'   => true,
