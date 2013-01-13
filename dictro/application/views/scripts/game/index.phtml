@@ -1,9 +1,11 @@
 
 <div class="content">
+
 	<?php
 		$session= new Zend_Session_Namespace('loggedin');
 		
 		if ($session->loggedin == "91" or $session->loggedin == "92"){
+
 	?>
 	<div class="not_logged_in">
 		<h1>Game</h1>
@@ -17,7 +19,7 @@
 		echo $this->formGameStart;
 	?>
 	<br>
-		
+
 	<?php
 	/*
 	<div class="table">
@@ -50,18 +52,18 @@ EOT;
 	?>
 	</table>
 		</center>
+<<<<<<< HEAD
 	</div>	
 	
 	
 	</div>
 	*/?>
-<?php
-}
+	<?php }
+	else{?>
+		<div id="guest">
+			Login to play the game!
+		</div>
+	<?php }?>
 
-else{?>
-        <div id="guest">
-            Login to play the game!
-        </div>
-		<?php }?>
 	
 </div>
