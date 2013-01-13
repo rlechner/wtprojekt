@@ -1,3 +1,11 @@
+<style>
+	#gamestart_button-element{
+		margin-left: 350px;
+	}
+	#gamestart_button{
+		width: 75px;
+	}
+</style>
 
 <div class="content">
 
@@ -13,11 +21,13 @@
 	</div>
 	
 	<br>
+	<div id="gamestartButton">
 	<?php 
 	
 		$this->formGameStart->setAction($this->url());
 		echo $this->formGameStart;
 	?>
+	</div>
 	<br>
 
 	<?php
@@ -61,7 +71,7 @@ EOT;
 	<?php }
 	else{?>
 		<div id="guest">
-			Login to play the game!
+			<h1>Login to play the game!</h1>
 		</div>
 	<?php }?>
 
