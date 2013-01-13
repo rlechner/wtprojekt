@@ -13,11 +13,18 @@ class Application_Form_Login extends Zend_Form
                 'label' => 'Vocable:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,255)),
+							'validator' => 'alpha',
+							
+						)
             ));       
 	
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
             'label'    => 'Search',
+			
         	//'label_class' => 'cssKlasseFuerDekorator',
         
             ));

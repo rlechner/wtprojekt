@@ -8,10 +8,12 @@
 </style>
 
 <div class="content">
-	
-	<?php $session = new Zend_Session_Namespace('loggedin');
-	if($session->loggedin == "91" || $session->loggedin == "92")
-	{
+
+	<?php
+		$session= new Zend_Session_Namespace('loggedin');
+		
+		if ($session->loggedin == "91" or $session->loggedin == "92"){
+
 	?>
 	<div class="not_logged_in">
 		<h1>Game</h1>
@@ -21,11 +23,13 @@
 	<br>
 	<div id="gamestartButton">
 	<?php 
+	
 		$this->formGameStart->setAction($this->url());
 		echo $this->formGameStart;
 	?>
 	</div>
 	<br>
+
 	<?php
 	/*
 	<div class="table">
@@ -58,14 +62,18 @@ EOT;
 	?>
 	</table>
 		</center>
-	</div>		
-</div>
-		*/?>
+<<<<<<< HEAD
+	</div>	
+	
+	
+	</div>
+	*/?>
 	<?php }
 	else{?>
 		<div id="guest">
 			<h1>Login to play the game!</h1>
 		</div>
 	<?php }?>
+
 	
 </div>

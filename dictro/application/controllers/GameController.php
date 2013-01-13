@@ -3,7 +3,7 @@
 class GameController extends Zend_Controller_Action
 {
 
-    public function init()
+	public function init()
     {
         /* Initialize action controller here */
     	$session = new Zend_Session_Namespace('game');
@@ -32,19 +32,22 @@ class GameController extends Zend_Controller_Action
         	$this->view->formGameStart = $formGameStart;
     }
 	
+
 	public function loadquestionAction()
 	{
 		$session = new Zend_Session_Namespace('game');
 		$formQuesten = new Application_Form_LoadQuestion($_POST);
-		
+
 		$this->view->formQuesten = $formQuesten;
 
 		$session->success = 0;
 		$success = null;
 		$question = "";
 		$answer = "";
+		$session->success = 0;
 		mb_regex_encoding('UTF-8');
 		mb_internal_encoding("UTF-8");
+
 
 
 				$db = Zend_Registry::get('dbc');

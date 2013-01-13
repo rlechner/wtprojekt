@@ -13,12 +13,26 @@ class Application_Form_Login extends Zend_Form
                 'label' => 'Username:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,20)),
+							'validator' => 'alnum',
+							
+						)
             ));
         
  
         $this->addElement('password', 'password', array(
             'label' => 'Passwort:',
             'required' => true,
+			
+			'validators' => array( 
+									array(
+									'StringLength', false, array(3,20)),
+							'validator' => 'alnum',
+							
+						)
             ));
         
 	

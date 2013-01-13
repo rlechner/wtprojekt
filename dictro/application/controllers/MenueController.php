@@ -53,7 +53,7 @@ class MenueController extends Zend_Controller_Action
 		                      		FROM
 		                                		USERS
 					
-		                     		WHERE 		name = "' . $loginForm->getValue('username') . '";');
+		                     		WHERE 		name = "' .  mysql_real_escape_string($loginForm->getValue('username')) . '";');
 
 					$stmt   = $db -> query($query);
 					$result1 = $stmt -> fetch();

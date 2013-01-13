@@ -7,7 +7,7 @@ class Application_Form_GameStart extends Zend_Form
     {
         $this->setMethod('post');
 
-		$this->setAction('/game');
+		$this->setAction('index');
         
         $this->addElement('submit', 'gamestart_button', array(
         		'ignore'   => true,

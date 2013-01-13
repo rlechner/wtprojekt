@@ -13,6 +13,13 @@ class Application_Form_SearchVocableAdmin extends Zend_Form
         		'label'	=> 'Vocable:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,255)),
+							'validator' => 'alpha',
+							
+						)
             ));
 			
 		 $this->addElement('submit', 'search_button', array(

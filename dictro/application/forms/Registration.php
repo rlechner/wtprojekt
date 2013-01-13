@@ -13,6 +13,13 @@ class Application_Form_Registration extends Zend_Form
                 'label' => 'Username:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,20)),
+							'validator' => 'alnum',
+							
+						)
             ));
         
         
@@ -20,18 +27,39 @@ class Application_Form_Registration extends Zend_Form
         		'label' => 'E-Mail:',
         		'required' => true,
         		'filters'    => array('StringTrim'),
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,50)),
+							'validator' => 'alnum',
+							
+						)
         ));
         
  
         $this->addElement('password', 'password1', array(
             'label' => 'Password:',
             'required' => true,
+			
+			'validators' => array( 
+									array(
+									'StringLength', false, array(3,20)),
+							'validator' => 'alnum',
+							
+						)
             ));
         
         
         $this->addElement('password', 'password2', array(
         		'label' => 'Confirm Password:',
         		'required' => true,
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,20)),
+							'validator' => 'alnum',
+							
+						)
         ));
         
 

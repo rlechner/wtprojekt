@@ -34,7 +34,7 @@ class TranslationController extends Zend_Controller_Action
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		german LIKE "' . $values['vocable'] . '%";');
+		                     		WHERE 		german LIKE "' . mysql_real_escape_string($values['vocable']) . '%";');
 		    	
 		    				$stmt->execute();
 		    				$stmt->bind_result($result1, $result2);
@@ -47,7 +47,7 @@ class TranslationController extends Zend_Controller_Action
 	                      		FROM
 	                                		VOCABLE
     					
-	                     		WHERE 		english LIKE "' . $values['vocable'] . '%";');
+	                     		WHERE 		english LIKE "' . mysql_real_escape_string($values['vocable']) . '%";');
     					
     						$stmt->execute();
     						$stmt->bind_result($result1, $result2);
