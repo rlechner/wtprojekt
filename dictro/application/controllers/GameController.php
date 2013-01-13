@@ -14,13 +14,16 @@ class GameController extends Zend_Controller_Action
 
     public function indexAction()
     {     
+    	
     	$session = new Zend_Session_Namespace('loggedin');
     	$this->view->user = $session->loggedin_user;
     	
 	        if ($this->getRequest()->isPost()) {
 	        	$this->request = $this->getRequest();
 	        	if (isset($_POST['gamestart_button'])) {
-	        		$this->view->question = $this->loadquestionAction();
+	        		//$this->view->question = $this->loadquestionAction();
+	        		//$this->loadquestionAction();
+	        		$this->redirect('/game/loadquestion');
 	        	}
         	}
         	
@@ -31,6 +34,10 @@ class GameController extends Zend_Controller_Action
 	public function loadquestionAction()
 	{
 		$session = new Zend_Session_Namespace('game');
+		$formQuesten = new Application_Form_LoadQuestion($_POST);
+		
+		$this->view->formQuesten = $formQuesten;
+
 		$question = "";
 		$answer = "";
 		mb_regex_encoding('UTF-8');
@@ -46,25 +53,19 @@ class GameController extends Zend_Controller_Action
 								'SELECT german, english FROM vocable
 								WHERE (level = "' . $session->level . '")
 								ORDER BY RAND()
-								LIMIT 5');
+								LIMIT 1');
 				  
 					$stmt->execute();
 					$stmt->bind_result($question, $answer);
-		
-					$ergebnis = array();
-					$i = 0;
-					// Array ausgeben
-					while($stmt->fetch()) {
-						$ergebnis[$i][0] = mb_split(' ', $question);
-						$ergebnis[$i][1]= mb_split(' ', $answer);
-						$i++;
-					}
+
+					$this->view->question = $question;
+					$this->view->answer = $answer;
+					
 					$stmt->close();
-					 
-					return($ergebnis);
+
 					//return $this->_helper->redirector('index');
 				}	
-	
+		
 	}
 
 
