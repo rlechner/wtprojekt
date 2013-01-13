@@ -74,19 +74,16 @@ class AdminController extends Zend_Controller_Action
 				$db = Zend_Registry::get('dbc');
 				if (! is_null($db)) {
 					$values = $formDelete->getValues();
-		
 					$stmt = $db->prepare(
-		    						'DELETE
-		                                	
-		                      		FROM
+		    						'DELETE		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		voc_id = "' . $values['vocableID'] . '"
-									');
+		                     		WHERE 		voc_id = "' . $values['vocableID'] . '"');
 		    	
 		    				$stmt->execute();
 		
-					$this->view->deleteerfolgreich = 'Vocable: "' .  $values['vocableeID'] . '" successful deleted';
+					$this->view->deleteerfolgreich = 'Vocable: "' .  $values['vocableID'] . '" successful deleted';
+
 					/*
 					 }
 					else {
@@ -110,6 +107,7 @@ class AdminController extends Zend_Controller_Action
     	$result2 = "";
 		$result3 = "";
 		$result4 = "";
+
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
@@ -123,7 +121,7 @@ class AdminController extends Zend_Controller_Action
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
 		    						'SELECT
-		                                		voc_id,german, english, level
+		                                		voc_id, german, english, level
 		                      		FROM
 		                                		VOCABLE
 					
