@@ -13,6 +13,13 @@ class Application_Form_DeleteVocableAdmin extends Zend_Form
                 'label' => 'Vocable ID:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
+				
+				'validators' => array( 
+									array(
+									'StringLength', false, array(3,255)),
+							'validator' => 'digits',
+							
+						)
             ));       
         
         $this->addElement('submit', 'delete_button', array(

@@ -28,12 +28,12 @@ class AdminController extends Zend_Controller_Action
 		 
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['search_button']) && $formSearch->isValid($this->request->getPost())) {
+			if (isset($_POST['search_button']) &&  $formSearch->isValid($this->request->getPost())) {
 				$db = Zend_Registry::get('dbc');
 				$db->query('SET NAMES utf8;');
 		
 				if (! is_null($db)) {
-					$values = $formSearch->getValues();
+					$values =  $formSearch->getValues();
 					// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
 					// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
@@ -42,7 +42,7 @@ class AdminController extends Zend_Controller_Action
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		german LIKE "' . $values['search_voc'] . '%";');
+		                     		WHERE 		german LIKE "' .  mysql_real_escape_string($values['search_voc']) . '%";');
 		    	
 		    				$stmt->execute();
 					$stmt->bind_result($result1, $result2, $result3);
@@ -70,19 +70,19 @@ class AdminController extends Zend_Controller_Action
 		
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['delete_button']) && $formDelete->isValid($this->request->getPost())) {
+			if (isset($_POST['delete_button']) &&  $formDelete->isValid($this->request->getPost())) {
 				$db = Zend_Registry::get('dbc');
 				if (! is_null($db)) {
-					$values = $formDelete->getValues();
+					$values =  $formDelete->getValues();
 					$stmt = $db->prepare(
 		    						'DELETE		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		voc_id = "' . $values['vocableID'] . '"');
+		                     		WHERE 		voc_id = "' .  mysql_real_escape_string($values['vocableID']) . '"');
 		    	
 		    				$stmt->execute();
 		
-					$this->view->deleteerfolgreich = 'Vocable: "' .  $values['vocableID'] . '" successful deleted';
+					$this->view->deleteerfolgreich = 'Vocable: "' .   mysql_real_escape_string($values['vocableID']) . '" successful deleted';
 
 					/*
 					 }
@@ -111,12 +111,12 @@ class AdminController extends Zend_Controller_Action
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['search_button']) && $formSearch->isValid($this->request->getPost())) {
+			if (isset($_POST['search_button']) &&  $formSearch->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
     			if (! is_null($db)) {
-    				$values = $formSearch->getValues();
+    				$values =  $formSearch->getValues();
     				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
@@ -125,7 +125,7 @@ class AdminController extends Zend_Controller_Action
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		german LIKE "' . $values['search_voc'] . '%";');
+		                     		WHERE 		german LIKE "' .  mysql_real_escape_string($values['search_voc']) . '%";');
 		    	
 		    				$stmt->execute();
 		    				$stmt->bind_result($result1, $result2, $result3, $result4);
@@ -155,21 +155,21 @@ class AdminController extends Zend_Controller_Action
 		
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['update_button']) && $formUpdate->isValid($this->request->getPost())) {
+			if (isset($_POST['update_button']) &&  $formUpdate->isValid($this->request->getPost())) {
 				 $db = Zend_Registry::get('dbc');
 				 if (! is_null($db)) {
-    				$values = $formUpdate->getValues();
+    				$values =  $formUpdate->getValues();
   
                    $stmt = $db->prepare( '  UPDATE`vocable` 
-                                            SET german = "' . $values['german_voc'] . '",
-												english = "' . $values['english_voc'] . '",
-												level = "' . $values['level'] . '"
-											WHERE voc_id = "' . $values['voc_id'] . '"
+                                            SET german = "' .  mysql_real_escape_string($values['german_voc']) . '",
+												english = "' .  mysql_real_escape_string($values['english_voc']) . '",
+												level = "' .  mysql_real_escape_string($values['level']) . '"
+											WHERE voc_id = "' .  mysql_real_escape_string($values['voc_id']) . '"
                                         ');
                        
                     $stmt->execute();
                 
-				$this->view->updateerfolgreich = 'Vocable: "' .  $values['german_voc'] . '" successful updated';
+				$this->view->updateerfolgreich = 'Vocable: "' .   mysql_real_escape_string($values['german_voc']) . '" successful updated';
                 /*        
                 }
                 else {
@@ -195,12 +195,12 @@ class AdminController extends Zend_Controller_Action
     	
     	if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['search_button']) && $formSearch->isValid($this->request->getPost())) {
+			if (isset($_POST['search_button']) &&  $formSearch->isValid($this->request->getPost())) {
     			$db = Zend_Registry::get('dbc');
     			$db->query('SET NAMES utf8;');
     				
     			if (! is_null($db)) {
-    				$values = $formSearch->getValues();
+    				$values =  $formSearch->getValues();
     				// 					$translation = $db->query('SELECT german, english from vocable WHERE german LIKE "%' . $values['vocable'] . '%";');
     				// 					$wert = mysqli_fetch_assoc($translation);
 					$stmt = $db->prepare(
@@ -209,7 +209,7 @@ class AdminController extends Zend_Controller_Action
 		                      		FROM
 		                                		VOCABLE
 					
-		                     		WHERE 		german LIKE "' . $values['search_voc'] . '%";');
+		                     		WHERE 		german LIKE "' .  mysql_real_escape_string($values['search_voc']) . '%";');
 		    	
 		    				$stmt->execute();
 		    				$stmt->bind_result($result1, $result2);
@@ -236,20 +236,20 @@ class AdminController extends Zend_Controller_Action
 		
 		if ($this->getRequest()->isPost()) {
 			$this->request = $this->getRequest();
-			if (isset($_POST['insert_button']) && $formInsert->isValid($this->request->getPost())) {
+			if (isset($_POST['insert_button']) &&  $formInsert->isValid($this->request->getPost())) {
 				 $db = Zend_Registry::get('dbc');
 				 if (! is_null($db)) {
     				$values = $formInsert->getValues();
   
                    $stmt = $db->prepare( '  INSERT INTO `vocable`(`german`, `english`, `level`) 
-                                            VALUES ("' . $values['german_voc'] . '",
-                                                    "' . $values['english_voc'] . '", 
-													"' . $values['level'] . '");  
+                                            VALUES ("' .  mysql_real_escape_string($values['german_voc']) . '",
+                                                    "' . mysql_real_escape_string($values['english_voc']) . '", 
+													"' . mysql_real_escape_string($values['level']) . '");  
                                         ');
                        
                     $stmt->execute();
                 
-				$this->view->inserterfolgreich = 'Vocable: "' .  $values['german_voc'] . '" successful added';
+				$this->view->inserterfolgreich = 'Vocable: "' .  mysql_real_escape_string($values['german_voc']) . '" successful added';
                 /*        
                 }
                 else {

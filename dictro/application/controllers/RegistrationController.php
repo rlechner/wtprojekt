@@ -37,7 +37,7 @@ class RegistrationController extends Zend_Controller_Action
     	
     			if (User nicht vorhanden) {
 				*/
-    				$values = $registerForm->getValues();
+    				$values =  $registerForm->getValues();
   					
     				if( $registerForm->getValue('password1') != $registerForm->getValue('password2')){
     					$success=-1;
@@ -52,8 +52,8 @@ class RegistrationController extends Zend_Controller_Action
     				
     				$db->query('SET NAMES utf8;');
     				$stmt = $db->prepare  ('	INSERT INTO `users`(`name`, `password`, `userstate`) 
-    											VALUES ("' . $registerForm->getValue('username') . '",
-    													"' . $registerForm->getValue('password2') . '", 92)	
+    											VALUES ("' . mysql_real_escape_string($registerForm->getValue('username')) . '",
+    													"' . mysql_real_escape_string($registerForm->getValue('password2')) . '", 92)	
     									');
     				
     				$stmt->execute();

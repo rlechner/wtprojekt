@@ -20,13 +20,13 @@ class ContactController extends Zend_Controller_Action
             
             if ($form->isValid($post)) {
                 
-                $message = 'From: ' . $post['name'] . chr(10) . 'Email: ' . $post['email'] . chr(10);
-                $message .= 'Message: ' . $post['message'];
+                $message = 'From: ' .  mysql_real_escape_string($post['name']) . chr(10) . 'Email: ' .  mysql_real_escape_string($post['email']) . chr(10);
+                $message .= 'Message: ' .  mysql_real_escape_string($post['message']);
 				$headers = 'From: contact@dictro.com' . "\r\n" .
 							'Reply-To: webmaster@dictro.com' . "\r\n" .
 							'X-Mailer: PHP/' . phpversion();
                 
-                mail('gumberger.robert@googlemail.com', 'contact: ' . $post['subject'], $message, $headers);
+                mail('gumberger.robert@googlemail.com', 'contact: ' .  mysql_real_escape_string($post['subject']), $message, $headers);
             }
         }
         
