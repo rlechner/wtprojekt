@@ -3,17 +3,49 @@
 	
 	<div class="not_logged_in">
 		<h1>Game</h1>
-		<center>Hello $User, press the startbutton to play the game!</center>
+		<center>Hello <?php echo $this->user?>, press the startbutton to play the game!</center>
 	</div>
 	
 	<br>
-	
-	<div class="start_button">	
+	<?php 
+		$this->formGameStart->setAction($this->url());
+		echo $this->formGameStart;
+	?>
+	<br>
+				
+	<div class="table">
+			
+		<h1>Game</h1>
+			<br>
+		<div id="result">
 		<center>
-		<form method="get" action="/game/loadquestion">
-			<input type="submit" value="Start Game">
-		</form> 
+		<table>
+			<thead>
+			<tr>
+			<th scope="col">Frage</th>
+			<th scope="col">German</th>
+			<th scope="col">English</th>
+			</tr>
+			</thead>				
+	<?php 
+	$i = 1;
+	foreach ($this->question as $question) {
+		print <<<EOT
+			
+			<tr>
+			<td>{$i}</td>
+			<td>{$question[0][0]}</td>
+			<td>{$question[1][0]}</td>
+			</tr>
+EOT;
+		$i++;
+	}
+	?>
+	</table>
 		</center>
-	</div>
+	</div>		
+</div>
+		
+
 	
 </div>
