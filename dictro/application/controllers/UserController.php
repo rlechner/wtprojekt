@@ -49,7 +49,7 @@ class UserController extends Zend_Controller_Action
    					$stmt = $db->prepare  (
    									'DELETE		FROM	highscore
 		
-		                     		WHERE 		user_id = "' . $session->loggedin_id['user_id'] . '"');
+		                     		WHERE 		user_id = "' . $session->loggedin_id . '"');
    						
    					$stmt->execute();
    						
@@ -85,7 +85,7 @@ class UserController extends Zend_Controller_Action
 					$stmt2 = $db->prepare('	
 									DELETE		FROM
 												highscore
-									WHERE 		user_id = "' . $session->loggedin_id['user_id'] . '"
+									WHERE 		user_id = "' . $session->loggedin_id . '"
 									');
 							$stmt2->execute();
 							
@@ -94,7 +94,7 @@ class UserController extends Zend_Controller_Action
 		    						'DELETE		FROM
 		                                		users
 					
-		                     		WHERE 		user_id = "' . $session->loggedin_id['user_id'] . '"
+		                     		WHERE 		user_id = "' . $session->loggedin_id . '"
 									');
 		    	
 		    				$stmt->execute();
