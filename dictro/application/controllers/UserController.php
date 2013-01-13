@@ -12,7 +12,7 @@ class UserController extends Zend_Controller_Action
     {
     		
    	}
-   	public function userFunctionAction(){
+   	public function userfunctionAction(){
    		
    		//$db	= Zend_Db_Table_Abstract::getDefaultAdapter();
    		$userForm = new Application_Form_User($_POST);
@@ -73,11 +73,50 @@ class UserController extends Zend_Controller_Action
 
    		
    		 
-   		$this->view->userForm = $userForm;
+		
+		
+		$request = $this->getRequest();
+		
+		if ($this->getRequest()->isPost()) {
+			$this->request = $this->getRequest();
+			if (isset($_POST['deleteAccount']) && $userForm->isValid($this->request->getPost())) {
+			
+			$db = Zend_Registry::get('dbc');
+				$db->query('SET NAMES utf8;');
+				
+				if (! is_null($db)) {
+					
+					$session = new Zend_Session_Namespace('loggedin');
+					
+					$stmt2 = $db->prepare('	
+									DELETE		FROM
+												highscore
+									WHERE 		user_id = "' . $session->loggedin_id['user_id'] . '"
+									');
+							$stmt2->execute();
+							
+							
+					$stmt = $db->prepare(
+		    						'DELETE		FROM
+		                                		users
+					
+		                     		WHERE 		user_id = "' . $session->loggedin_id['user_id'] . '"
+									');
+		    	
+		    				$stmt->execute();
+							
+					
+							
+							Zend_Session::destroy(true);
+							$this->redirect('index');
    		
    		
    		//FEEBEELEES
-   		
+				}
+			}
+   		}
+		
+		$this->view->userForm = $userForm;
    		
    	} 
    
