@@ -49,6 +49,7 @@ class MenueController extends Zend_Controller_Action
 					$db->query('SET NAMES utf8;');
 					$query = ('SELECT
 		                                		user_id, userstate
+
 		                      		FROM
 		                                		USERS
 					
