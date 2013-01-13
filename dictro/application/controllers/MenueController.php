@@ -62,6 +62,8 @@ class MenueController extends Zend_Controller_Action
 					$session->loggedin = $result1['userstate'];
 					
 					$session->loggedin_id = $result1['user_id'];
+					
+					$session->loggedin_user = $loginForm->getValue('username');
 
 					echo "Anmeldung erfolgreich";
 					
