@@ -12,7 +12,7 @@ class UserController extends Zend_Controller_Action
     {
     		
    	}
-   	public function userFunctionAction(){
+   	public function userfunctionAction(){
    		
    		//$db	= Zend_Db_Table_Abstract::getDefaultAdapter();
    		$userForm = new Application_Form_User($_POST);
@@ -39,24 +39,17 @@ class UserController extends Zend_Controller_Action
    				 
    				if (User nicht vorhanden) {
    				*/
-   				$values = $userForm->getValues();
-   				 
-   				if( $registerForm->getValue('password1') != $registerForm->getValue('password2')){
-   					$success=-1;
-   					$this->view->success = $success;
-   					//$this->redirect('registration');
-   						
-   						
-   						
-   				}
-   				else{
-   						
-   						
+   				//$values = $userForm->getValues();
+   				
+   				$session = new Zend_Session_Namespace('loggedin');
+   				
+   				//$session->loggedin_id;
+
    					$db->query('SET NAMES utf8;');
    					$stmt = $db->prepare  (
-   							'DELETE		FROM	highscore
+   									'DELETE		FROM	highscore
 		
-		                     		WHERE 		user_id = "' . $values['user_id'] . '"');
+		                     		WHERE 		user_id = "' . $session->loggedin_id . '"');
    						
    					$stmt->execute();
    						
@@ -64,23 +57,18 @@ class UserController extends Zend_Controller_Action
    						
    					$this->view->success = $success;
    						
-   					$this->redirect('index');
+   					//$this->redirect('index');
    						
    					return;
-   				}
    			}
+   			
    		}
 
-   		
-   		 
    		$this->view->userForm = $userForm;
-   		
-   		
-   		//FEEBEELEES
-   		
-   		
+	
    	} 
    
 
+   	
 }
 
