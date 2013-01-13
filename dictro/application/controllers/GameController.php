@@ -39,6 +39,7 @@ class GameController extends Zend_Controller_Action
 		
 		$this->view->formQuesten = $formQuesten;
 
+		$session->success = 0;
 		$success = null;
 		$question = "";
 		$answer = "";
@@ -79,7 +80,8 @@ class GameController extends Zend_Controller_Action
 				
 				
 				// Testen ob Eingabe richtig ist
-				
+		
+
 					if ($this->getRequest()->isPost()) {
 			    		$this->request = $this->getRequest();
 			    		if (isset($_POST['answer_button']) && $formQuesten->isValid($_POST)) {
@@ -105,6 +107,7 @@ class GameController extends Zend_Controller_Action
 						$session->level = $session->level + 1;
 					}
 					
+			
 	}
 
 

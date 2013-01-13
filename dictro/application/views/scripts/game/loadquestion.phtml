@@ -1,3 +1,15 @@
+<style>
+	#insertVocableUser{
+		margin-left: 275px;
+	}
+	
+	#answer_button{
+		width: 75px;
+		margin-left: 37px;
+	}
+
+</style>
+
 <div class="content">
 	
 		<?php 
@@ -28,17 +40,18 @@ EOT;
 		</center>
 		</div>		
 		
+		<div id="insertVocableUser">
 	<?php 
 		$this->formQuesten->setAction($this->url());
 		echo $this->formQuesten;
 	?>
-
+		</div>
 	
 	<?php 
 		if($session->success == 1){
 			echo "True!";
 		}
-		else if($session->success = -1){
+		else if($session->success == -1){
 			echo "False!";
 		}
 	?>

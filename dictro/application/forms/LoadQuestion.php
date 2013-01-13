@@ -10,7 +10,7 @@ class Application_Form_LoadQuestion extends Zend_Form
 		$this->setAction('game/loadquestion');
 
         $this->addElement('text', 'answer_user', array(
-                'label' => 'Translate this vocable into German:',
+                'label' => 'Translate into German:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
             ));
