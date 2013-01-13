@@ -82,14 +82,14 @@ class GameController extends Zend_Controller_Action
 				
 					if ($this->getRequest()->isPost()) {
 			    		$this->request = $this->getRequest();
-			    		if (isset($_POST['rbutton']) && $registerForm->isValid($_POST)) {
+			    		if (isset($_POST['answer_button']) && $formQuesten->isValid($_POST)) {
 			    			
 			    			$db = Zend_Registry::get('dbc');
 			    			$db->query('SET NAMES utf8;');
 			    			
 			    			$values = $formQuesten->getValues();
 			    			
-			    			if($formQuesten->getValue('answer_button') == $vocable[0]){
+			    			if($formQuesten->getValue('answer_user') == $answer){
 			    				$session->success=1;
 			    			}
 			    			else{
