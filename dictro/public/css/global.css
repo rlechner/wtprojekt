@@ -324,5 +324,66 @@
 		width: 80px;
 		float:right;
 	}
+	
+	
+	/* FORMS */
+	/*********/
+	dt {
+		padding-left: 40px;
+	}
+	
+	#speech-element{
+		padding-bottom: 10px;
+	}
+	
+	#loginform dt {
+		color:#fff;
+		padding-left: 40px;
+	}
+	
+	#loginform{
+		margin-left: -30px;
+	}
 
+	#submit-element{
+		margin-left: 115px;
+	}
+	
+	#submit{
+		width: 75px;
+	}
+	
+	#index{
+		width: 75px;
+	}
+	
+	
+	/*Admin Forms*/
+	/*************/
+	
+	#search_button{
+		width: 75px;
+	}
+	
+	#insert_button{
+		width: 75px;
+	}
+	
+	#update_button{
+		width: 75px;
+	}
 
+	#delete_button{
+		width: 75px;
+	}
+	
+	#resetHighscore{
+		width: 125px;
+		margin-left: 285px;
+	}
+
+	#deleteAccount{
+		width: 125px;
+		margin-left: 285px;
+		margin-top: 60px;
+	}

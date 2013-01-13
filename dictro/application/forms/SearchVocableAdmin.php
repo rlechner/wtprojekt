@@ -10,6 +10,7 @@ class Application_Form_SearchVocableAdmin extends Zend_Form
 		$this->setAction('admin/insertvocable');
 
         $this->addElement('text', 'search_voc', array(
+        		'label'	=> 'Vocable',
                 'required' => true,
                 'filters'    => array('StringTrim'),
             ));

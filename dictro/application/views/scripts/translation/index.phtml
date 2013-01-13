@@ -1,3 +1,9 @@
+<style>
+	#index{
+		margin-left: 37px;
+	}
+</style>
+
 
 <div id="view-content">
 
@@ -8,23 +14,28 @@
 	<div class="flagg">
 				
 		<div id="gb" class="gb_ger" style="float:left; text-align: right; width: 350px;">
-			<img src="/images/gb_ger.bmp">
+			<img src="/images/ger_gb.bmp">
 		</div>
 		
 		<div id="de" class="ger_gb" style="float:right; text-align: left; width: 350px;">
-			<img src="/images/ger_gb.bmp">
+			<img src="/images/gb_ger.bmp">
 		</div>
 					
 	</div>
 				
 	<br>
+	
+	
+	
 			
-	<div id="inhalt" style="padding-left: 285px">
+	<div id="inhalt">
+	
+	<div style="padding-left: 273px">
 	<?php
 		$this->form->setAction($this->url());
 		echo $this->form;
 	?>
-	
+	</div>
 
 		<?php
 		if ($this->translation != NULL){
