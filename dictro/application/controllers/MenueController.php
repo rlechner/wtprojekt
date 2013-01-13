@@ -48,7 +48,7 @@ class MenueController extends Zend_Controller_Action
 					//$db = Zend_Registry::get('dbc');
 					$db->query('SET NAMES utf8;');
 					$query = ('SELECT
-		                                		userstate
+		                                		user_id, userstate
 		                      		FROM
 		                                		USERS
 					
@@ -60,6 +60,8 @@ class MenueController extends Zend_Controller_Action
 					$session = new Zend_Session_Namespace('loggedin');
 					
 					$session->loggedin = $result1['userstate'];
+					
+					$session->loggedin_id = $result1['user_id'];
 
 					echo "Anmeldung erfolgreich";
 					
