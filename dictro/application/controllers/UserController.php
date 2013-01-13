@@ -18,11 +18,10 @@ class UserController extends Zend_Controller_Action
    		$userForm = new Application_Form_User($_POST);
    		 
    		
-   		
    		if ($this->getRequest()->isPost()) {
    			$this->request = $this->getRequest();
    			if (isset($_POST['resetHighscore']) && $userForm->isValid($_POST)) {
-   		
+   				 
    				$db = Zend_Registry::get('dbc');
    				$db->query('SET NAMES utf8;');
    				/*
@@ -32,16 +31,16 @@ class UserController extends Zend_Controller_Action
    				 		'name',
    				 		'password'
    				 );
-   		
+   				 
    				$adapter->setIdentity($registerForm->getValue('username'));
    				$adapter->setCredential($registerForm->getValue('passwor2'));
-   		
+   				 
    				$result = $adapter->authenticate($adapter);
-   		
+   				 
    				if (User nicht vorhanden) {
    				*/
    				$values = $userForm->getValues();
-   		
+   				 
    				if( $registerForm->getValue('password1') != $registerForm->getValue('password2')){
    					$success=-1;
    					$this->view->success = $success;
@@ -51,29 +50,30 @@ class UserController extends Zend_Controller_Action
    						
    				}
    				else{
-   					 
-   					 
+   						
+   						
    					$db->query('SET NAMES utf8;');
    					$stmt = $db->prepare  (
    							'DELETE		FROM	highscore
-			
+		
 		                     		WHERE 		user_id = "' . $values['user_id'] . '"');
-   					 
+   						
    					$stmt->execute();
-   					 
+   						
    					$success=1;
-   					 
+   						
    					$this->view->success = $success;
-   					 
+   						
    					$this->redirect('index');
-   					 
+   						
    					return;
    				}
    			}
    		}
+
    		
    		 
-   		$this->view->registerForm = $registerForm;
+   		$this->view->userForm = $userForm;
    		
    		
    		//FEEBEELEES
