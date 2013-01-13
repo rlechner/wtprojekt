@@ -1,22 +1,48 @@
 <div class="content">
 	
+		<?php 
+		$session = new Zend_Session_Namespace('game');
+		?>
+
+	
+		<div id="blubb">
+		<center>
+		
+		<?php
+		/* 
+			var_dump($this->question);
+			echo $this->question;
+			echo $this->answer;
+		*/
+			?>
+		
+		<?php
+		if ($this->question != NULL){
+			foreach ($this->question as $vocable) {
+			print <<<EOT
+			{$vocable[0]}	
+EOT;
+			}			
+		}
+	 	?>
+		</center>
+		</div>		
+		
 	<?php 
 		$this->formQuesten->setAction($this->url());
 		echo $this->formQuesten;
 	?>
 
 	
-		<div id="blubb">
-		<center>
-		
-		<?php 
-			echo $this->level;
-			var_dump($this->question);
-			echo $this->question;
-			echo $this->answer;
-		?>
-		</center>
-		</div>		
+	<?php 
+		if($session->success == 1){
+			echo "True!";
+		}
+		else if($session->success = -1){
+			echo "False!";
+		}
+	?>
+	
 
 	
 </div>

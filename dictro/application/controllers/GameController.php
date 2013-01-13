@@ -10,6 +10,7 @@ class GameController extends Zend_Controller_Action
     	
     	$session->level = 1;
     	$session->questioncount = 1;
+    	$session->success = 0;
     }
 
     public function indexAction()
@@ -38,6 +39,7 @@ class GameController extends Zend_Controller_Action
 		
 		$this->view->formQuesten = $formQuesten;
 
+		$success = null;
 		$question = "";
 		$answer = "";
 		mb_regex_encoding('UTF-8');
@@ -58,14 +60,51 @@ class GameController extends Zend_Controller_Action
 					$stmt->execute();
 					$stmt->bind_result($question, $answer);
 
-					$this->view->question = $question;
-					$this->view->answer = $answer;
-					
+					$ergebnis = array();
+					$i = 0;
+					// Array ausgeben
+					while($stmt->fetch()) {
+						$ergebnis[$i][0]=$question;
+						$ergebnis[$i][1]=$answer;
+						$i++;
+					}
 					$stmt->close();
-
+					 
+					$this->view->question = $ergebnis;
+					
+					//$this->view->question = $question;
+					//$this->view->answer = $answer;
 					//return $this->_helper->redirector('index');
 				}	
-		
+				
+				
+				// Testen ob Eingabe richtig ist
+				
+					if ($this->getRequest()->isPost()) {
+			    		$this->request = $this->getRequest();
+			    		if (isset($_POST['rbutton']) && $registerForm->isValid($_POST)) {
+			    			
+			    			$db = Zend_Registry::get('dbc');
+			    			$db->query('SET NAMES utf8;');
+			    			
+			    			$values = $formQuesten->getValues();
+			    			
+			    			if($formQuesten->getValue('answer_button') == $vocable[0]){
+			    				$session->success=1;
+			    			}
+			    			else{
+			    				$session->success=-1;
+			    			}
+			    		}
+					}
+				
+				
+					$session->questioncount = $session->questioncount + 1;
+					
+					if($session->questioncount >= 5){
+						$session->level = $session->level + 1;
+					}
+					
 	}
 
 

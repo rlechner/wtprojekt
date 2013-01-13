@@ -7,7 +7,7 @@ class Application_Form_LoadQuestion extends Zend_Form
     {
         $this->setMethod('post');
         
-		$this->setAction('loadquestion');
+		$this->setAction('game/loadquestion');
 
         $this->addElement('text', 'answer_user', array(
                 'label' => 'Translate this vocable into German:',
