@@ -21,6 +21,7 @@ class GameController extends Zend_Controller_Action
 	        	$this->request = $this->getRequest();
 	        	if (isset($_POST['gamestart_button'])) {
 	        		$this->view->question = $this->loadquestionAction();
+					$this->redirect('game/loadquestion');
 	        	}
         	}
         	
@@ -29,44 +30,44 @@ class GameController extends Zend_Controller_Action
     }
 	
 	public function loadquestionAction()
-	{
-		$session = new Zend_Session_Namespace('game');
-		$question = "";
-		$answer = "";
-		mb_regex_encoding('UTF-8');
-		mb_internal_encoding("UTF-8");
-
-
+    {
+        $session = new Zend_Session_Namespace('game');
+        $formQuestion = new Application_Form_LoadQuestion($_POST);
+        
+        $this->view->formQuestion = $formQuestion;
+        
+        
+        $question = "";
+        $answer = "";
+		
+		$var_level = "";
+		
+				
 				$db = Zend_Registry::get('dbc');
-				$db->query('SET NAMES utf8;');
-		
-				if (! is_null($db)) {
+                $db->query('SET NAMES utf8;');
+        
+                if (! is_null($db)) {
+                    
+                  
 
-					$stmt = $db->prepare(
-								'SELECT german, english FROM vocable
-								WHERE (level = "' . $session->level . '")
-								ORDER BY RAND()
-								LIMIT 5');
-				  
-					$stmt->execute();
-					$stmt->bind_result($question, $answer);
-		
-					$ergebnis = array();
-					$i = 0;
-					// Array ausgeben
-					while($stmt->fetch()) {
-						$ergebnis[$i][0] = mb_split(' ', $question);
-						$ergebnis[$i][1]= mb_split(' ', $answer);
-						$i++;
-					}
-					$stmt->close();
-					 
-					return($ergebnis);
-					//return $this->_helper->redirector('index');
-				}	
-	
-	}
+                    $stmt = $db->prepare(
+                                'SELECT german, english FROM vocable
+                                WHERE (level = "' . $session->level . '")
+                                ORDER BY RAND()
+                                LIMIT 5');
+                  
+                    $stmt->execute();
+                    $stmt->bind_result($question, $answer);
+                    
+                    $this->view->question = $question;
+                    $this->view->answer = $answer;
+                    
+                    //$stmt->close();
 
+                    //return $this->_helper->redirector('index'); 
+                }    
+        
+    }
 
 }
 
