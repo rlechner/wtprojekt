@@ -10,27 +10,27 @@ class Application_Form_UpdateVocableAdmin extends Zend_Form
 		$this->setAction('admin/updatevocable');
 		
 		$this->addElement('text','voc_id', array(
-				'label'		=> 'Vocable ID',
+				'label'		=> 'Vocable ID:',
 				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 			
 		$this->addElement('text','german_voc', array(
-				'label'		=> 'German Vocable',
+				'label'		=> 'German Vocable:',
 				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 		
 				
 		$this->addElement('text','english_voc', array(
-				'label'		=> 'English Vocable',
+				'label'		=> 'English Vocable:',
 				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));
 			
 				
 		$this->addElement('text','level', array(
-				'label'		=> 'Level',
+				'label'		=> 'Level:',
 				'required'	=> false,
 				'filters'	=> array('StringTrim'),
 			));

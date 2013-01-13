@@ -358,7 +358,7 @@
 	}
 	
 	
-	/*Admin Forms*/
+	/*Admin & User Forms*/
 	/*************/
 	
 	#search_button{
@@ -395,4 +395,35 @@
 	
 	#rbutton{
 		margin-left: 35px;
+	}
+	
+	/* Insert */
+	#adminInsert{
+		margin-left: 400px;
+	}
+	
+	#search_button{
+		margin-left: 36px;
+	}
+	
+	#insert_button{
+		margin-left: 36px;
+	}
+	
+	/* Delete*/
+	#adminDelete{
+		margin-left:265px;
+	}
+
+	#delete_button{
+		margin-left: 36px;
+	}
+	
+	/* Update */
+	#adminUpdate{
+		margin-left:265px;
+	}
+	
+	#update_button{
+		margin-left: 36px;
 	}
