@@ -10,7 +10,7 @@ class Application_Form_DeleteVocableAdmin extends Zend_Form
 		$this->setAction('admin/deletevocable');
 
         $this->addElement('text', 'vocableID', array(
-                'label' => 'Vocable:',
+                'label' => 'Vocable ID:',
                 'required' => true,
                 'filters'    => array('StringTrim'),
             ));       
