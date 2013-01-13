@@ -16,7 +16,7 @@ class Application_Form_Login extends Zend_Form
 				'validators' => array( 
 									array(
 									'StringLength', false, array(3,255)),
-							'validator' => 'alpha',
+							//'validator' => 'alpha',
 							
 						)
             ));       
