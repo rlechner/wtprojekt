@@ -10,7 +10,7 @@ class Application_Form_Contact extends Zend_Form
 		//$this->setAction('index');
         
         $this->addElement('text', 'name', array(
-            'label' => 'Name',
+            'label' => 'Name:',
             'required' => true,
 			'validators' => array( 
 									array(
@@ -21,7 +21,7 @@ class Application_Form_Contact extends Zend_Form
         ));
        
         $this->addElement('text', 'subject', array(
-            'label' => 'Subject',
+            'label' => 'Subject:',
             'required' => true,
 			'validators' => array( 
 									array(
@@ -32,7 +32,7 @@ class Application_Form_Contact extends Zend_Form
         ));
         
         $this->addElement('text', 'email', array(
-            'label' => 'E-Mail',
+            'label' => 'E-Mail:',
             'required' => true,
 			'validators' => array( 
 									array(
@@ -43,7 +43,7 @@ class Application_Form_Contact extends Zend_Form
         ));
         
         $this->addElement('textarea', 'message', array(
-            'label' => 'Message',
+            'label' => 'Message:',
             'required' => true,
 			'validators' => array( 
 									array(
