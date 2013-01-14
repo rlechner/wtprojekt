@@ -446,5 +446,10 @@
 		float:right;
 		margin-right: 60px;
 	}
+	
+	#quitgame_button{
+		width: 75px;
+		margin-left: 37px;
+	}
 
 

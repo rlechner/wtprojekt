@@ -22,7 +22,7 @@ class Application_Form_LoadQuestion extends Zend_Form
         
         $this->addElement('submit', 'quitgame_button', array(
         		'ignore'   => true,
-        		'label'    => 'quit',
+        		'label'    => 'Quit',
         ));
 
     }
