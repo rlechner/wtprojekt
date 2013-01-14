@@ -38,6 +38,8 @@ class TranslationController extends Zend_Controller_Action
 		    	
 		    				$stmt->execute();
 		    				$stmt->bind_result($result1, $result2);
+							
+							$language = 1;
     					}
     				else 
     					{
@@ -51,6 +53,8 @@ class TranslationController extends Zend_Controller_Action
     					
     						$stmt->execute();
     						$stmt->bind_result($result1, $result2);
+							
+							$language = 2;
     					}
     						
     				$ergebnis = array();
@@ -64,6 +68,7 @@ class TranslationController extends Zend_Controller_Action
     				$stmt->close();
     	
     				$this->view->translation = $ergebnis;
+					$this->view->language = $language;
     				//return $this->_helper->redirector('index');
     			}
     		}

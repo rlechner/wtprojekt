@@ -31,7 +31,7 @@ class Application_Form_Registration extends Zend_Form
 				'validators' => array( 
 									array(
 									'StringLength', false, array(3,50)),
-							'validator' => 'alnum',
+							//'validator' => 'alnum',
 							
 						)
         ));

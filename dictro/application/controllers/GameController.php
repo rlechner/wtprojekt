@@ -131,7 +131,7 @@ class GameController extends Zend_Controller_Action
 						 
 						$values = $formQuesten->getValues();
 						 
-						if($formQuesten->getValue('answer_user') == $session->answer){
+						if(mysql_real_escape_string($formQuesten->getValue('answer_user')) == $session->answer){
 							$session->points = $session->points + ($session->level * 10);
 							$this->view->result = '<div id=goodjob><h1>GOOD JOB!</h1></div>';
 							$this->view->reward = 'Reward: ' . ($session->level * 10) . ' <br> You have got';

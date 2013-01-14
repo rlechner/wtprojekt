@@ -43,8 +43,19 @@
 			<table>
 			<thead>
 			<tr>
+			<?php
+			if ($this->language == 1){
+			?>
 			<th scope="col">German</th>
 			<th scope="col">English</th>
+			<?php }
+			else if ($this->language == 2) {
+			?>
+			<th scope="col">English</th>
+			<th scope="col">German</th>
+			<?php
+			}
+			?>
 			</tr>
 			</thead>
 		<?php
