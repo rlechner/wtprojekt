@@ -89,7 +89,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Dictro</title>
-  <?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+  <?php echo $this->headLink()->appendStylesheet('/css/global.css');
+  		header("Content-type: text/html; charset=utf-8"); ?>
 </head>
 <body>
  
