@@ -17,7 +17,7 @@ class Application_Form_InsertVocableAdmin extends Zend_Form
 				'validators' => array( 
 									array(
 									'StringLength', false, array(3,255)),
-							'validator' => 'alpha',
+							//'validator' => 'alpha',
 							
 						)
 			));
@@ -31,7 +31,7 @@ class Application_Form_InsertVocableAdmin extends Zend_Form
 				'validators' => array( 
 									array(
 									'StringLength', false, array(3,255)),
-							'validator' => 'alpha',
+							//'validator' => 'alpha',
 							
 						)
 			));
@@ -45,7 +45,7 @@ class Application_Form_InsertVocableAdmin extends Zend_Form
 				'validators' => array( 
 									array(
 									'StringLength', false, array(1,2)),
-							'validator' => 'digits',
+							//'validator' => 'digits',
 							
 						)
 			));
