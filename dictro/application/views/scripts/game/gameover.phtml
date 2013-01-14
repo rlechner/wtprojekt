@@ -1,0 +1,50 @@
+<style>
+	#insertVocableUser{
+		margin-left: 275px;
+	}
+	
+	#answer_button{
+		width: 75px;
+		margin-left: 37px;
+	}
+
+	#gameover{
+		font-family: Impact, Charcoal, sans-serif;
+		color: red;
+	}
+</style>
+
+<div class="content">
+	
+		<?php 
+		$session = new Zend_Session_Namespace('game');
+		?>
+
+	
+		<div id="blubb">
+		<center>
+			Level:<?php echo $this->level?>
+			Question:<?php echo $this->questioncount?>
+			Fails:<?php echo $this->fails?>
+			<br>
+			<div id=gameover><h1>GAME OVER!</h1></div>
+			<br>
+			Congratulation, u have reached <?php echo $this->points?> points!
+			<br>
+			<table>
+				<tr>
+					<td>
+						<form method="post" action='/game/index'>
+						<input type="submit" id="playagain" value="Play Again">
+						</form>
+					</td>
+					<td>
+						<form method="post" action='/highscore'>
+						<input type="submit" id="viewhighscore" value="View Highscore">
+						</form>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</div>		
+</div>
