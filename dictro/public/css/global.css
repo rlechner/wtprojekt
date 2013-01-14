@@ -428,3 +428,23 @@
 		margin-left: 36px;
 	}
 	
+	/* CSS Validator*/
+	#cssvalidator{
+		    margin-left: 33px;
+   			margin-top: 50px;
+	}
+	
+	#userimage{
+	 	float:right;    
+	 	margin-right: 60px;
+    	margin-top: 20px;
+	}
+	
+	/* Contact */
+	#submitcontact{
+		width: 75px;
+		float:right;
+		margin-right: 60px;
+	}
+
+

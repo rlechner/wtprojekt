@@ -3,7 +3,7 @@
 class GameController extends Zend_Controller_Action
 {
 
-    public function init()
+	public function init()
     {
         /* Initialize action controller here */
 
@@ -71,8 +71,15 @@ class GameController extends Zend_Controller_Action
 	public function loadquestion()
 	{
 		$session = new Zend_Session_Namespace('game');
+		$formQuesten = new Application_Form_LoadQuestion($_POST);
+
+		$this->view->formQuesten = $formQuesten;
+
+		$session->success = 0;
+		$success = null;
 		$question = "";
 		$answer = "";
+		$session->success = 0;
 		mb_regex_encoding('UTF-8');
 		mb_internal_encoding("UTF-8");
 
@@ -173,6 +180,7 @@ class GameController extends Zend_Controller_Action
 				//Ergebnis in den Highscore schreiben.
 				$db = Zend_Registry::get('dbc');
 				if (! is_null($db)) {
+
 
 					$stmt = $db->prepare( '  INSERT INTO `highscore`(`user_id`, `score`)
                                             VALUES ("' . $userid . '",

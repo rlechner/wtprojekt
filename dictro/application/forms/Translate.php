@@ -24,12 +24,14 @@ class Application_Form_Translate extends Zend_Form
 					'label' => 'Vocable:',
 					'required' => true,
 					'filters' => array('StringTrim'),
-					'validators' => array(
-							array(
-							'validator' => 'StringLength', 'options' => array(3, 255),
-							'validator' => 'alnum',
-							)
+							
+					'validators' => array( 
+									array(
+									'StringLength', false, array(3,255)),
+							//'validator' => 'alpha',
+							
 						)
+						
 				));
 			$this->addElement('submit', 'index', array('label' => 'Translate'));
 

@@ -8,64 +8,34 @@
 </style>
 
 <div class="content">
-	
-	<?php $session = new Zend_Session_Namespace('loggedin');
-	if($session->loggedin == "91" || $session->loggedin == "92")
-	{
-	?>
-	<div class="not_logged_in">
-		<h1>Game</h1>
-		<center>Hello <?php echo $this->user?>, press the startbutton to play the game!</center>
-	</div>
-	
-	<br>
-	<div id="gamestartButton">
-	<?php 
-		$this->formGameStart->setAction($this->url());
-		echo $this->formGameStart;
-	?>
-	</div>
-	<br>
+
 	<?php
-	/*
-	<div class="table">
+		$session= new Zend_Session_Namespace('loggedin');
+		
+		if ($session->loggedin == "91" or $session->loggedin == "92"){
+
+			?>
+			<div class="not_logged_in">
+				<h1>Game</h1>
+				<center>Hello <?php echo $this->user?>, press the startbutton to play the game!</center>
+			</div>
 			
-		<h1>Game</h1>
 			<br>
-		<div id="result">
-		<center>
-		<table>
-			<thead>
-			<tr>
-			<th scope="col">Frage</th>
-			<th scope="col">German</th>
-			<th scope="col">English</th>
-			</tr>
-			</thead>				
-	<?php 
-	$i = 1;
-	foreach ($this->question as $question) {
-		print <<<EOT
+			<div id="gamestartButton">
+			<?php 
 			
-			<tr>
-			<td>{$i}</td>
-			<td>{$question[0][0]}</td>
-			<td>{$question[1][0]}</td>
-			</tr>
-EOT;
-		$i++;
-	}
-	?>
-	</table>
-		</center>
-	</div>		
-</div>
-		*/?>
-	<?php }
-	else{?>
-		<div id="guest">
-			<h1>Login to play the game!</h1>
-		</div>
-	<?php }?>
+				$this->formGameStart->setAction('game/game');
+				echo $this->formGameStart;
+			?>
+			</div>
+			<br>
+		
+			<?php }
+		else{?>
+			<div id="guest">
+				<h1>Login to play the game!</h1>
+			</div>
+		<?php }?>
+
 	
 </div>
